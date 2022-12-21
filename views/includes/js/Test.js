@@ -145,6 +145,7 @@ function answer(id){
 
     let chosenAnwer = document.getElementById(id).innerHTML;
 
+    //This index help us to indicat wich question the user is trying to answer that moment
     let indexOfPart = document.getElementById("indexOfPart").value;
 
     let correctAnswer = Parts[indexOfPart].correct;
