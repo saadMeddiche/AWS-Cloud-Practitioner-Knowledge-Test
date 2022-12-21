@@ -1,0 +1,150 @@
+//This will happen id the screen > 850px
+
+@media (min-width:850px){
+
+   //The media of the navbar
+    .navbare{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;  
+        height: 11%;
+
+
+        .logo{
+            width: 40%;
+            text-align: start;
+        }
+    
+        .TheLinks{
+            margin-right: 0px;
+            width: 45%;
+
+            justify-content: space-between;
+            
+            
+        }
+    
+    
+    }
+    //The end
+
+}
+
+//This will happen id the screen < 850px
+@media (max-width:850px) {
+    .TheTest{
+        display: block;
+        justify-content: space-between;
+        
+        .TheQuestion{
+            margin-top: 10%;
+
+    
+        }
+    
+        .TheOpstions{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+            
+
+            
+    
+            .TheOpstion{
+    
+                width: 45%;
+            }
+    
+        }
+    
+    }
+}
+
+
+//This will happen id the screen < 400px
+@media (max-width:400px){
+
+    .TheTest{
+        
+        
+        .TheQuestion{
+
+        }
+    
+        .TheOpstions{
+            
+            
+            .TheOpstion{
+    
+                width: 100%;
+            }
+    
+        }
+    
+    }
+
+    
+    .navbare{
+        position: relative;
+        z-index: 9;
+        height: 12%;
+
+        text-align: center;
+
+        .logo{
+            display: none;
+        }
+
+        .menu-icon{
+            text-align: center;
+            display: block;
+            
+        }
+    
+        .TheLinks{
+
+            display: block;
+            text-align: center;
+
+            // so z-index can work
+            position: relative;
+            z-index: 9;
+
+            background-color: var(--super-dark-orange);
+            color: var(--Yellow);
+
+            align-items: center;
+
+            height: 110vh;
+
+
+            transition:
+            opacity .8s .8s,
+            clip-path 1s .4s;
+
+            opacity: 0;
+
+
+            background: var(--super-dark-orange);
+            clip-path: circle(200px at top left);
+
+            .TheLink{
+                padding-top: 60px;
+                a{
+                    color: var(--Yellow);
+                }
+            }
+        }
+
+        .menu-btn:checked ~ .TheLinks{
+        transition: 
+        opacity .8s .5s,
+        clip-path 1s .5s;
+        opacity:1;
+        clip-path: circle(100% at center);        }
+    
+    
+    }
+}

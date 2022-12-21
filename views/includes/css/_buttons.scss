@@ -1,0 +1,25 @@
+.holderOfStartBtn{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    .StartBtn{
+      font-size: 20px;
+      color: var(--Yellow);
+  
+      background-color: var(--super-dark-orange);
+  
+      border: 3px solid var(--Yellow);
+      border-radius: 10px;
+  
+      margin-top: 50vh;
+      height: 40px;
+      width: 400px;
+
+      cursor: pointer;
+      
+      
+    }
+  }

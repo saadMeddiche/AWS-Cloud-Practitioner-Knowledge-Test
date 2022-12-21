@@ -1,0 +1,39 @@
+//Import the colors
+@use './colors';
+
+//Import the navbare
+@use './navbare';
+
+//Import the backgrounds
+@use './backgrounds';
+
+//Import the style Of The Test [Question and options]
+@use './theTest';
+
+//Import all buttons that has been used in the site
+@use './buttons';
+
+//Import the Media
+@use './media';
+
+
+
+*{
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+
+
+// .backgroundImageOfHome {
+
+//     height: 100vh;
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-image: url("../img/bg-home3.png") ;
+
+// }
+
