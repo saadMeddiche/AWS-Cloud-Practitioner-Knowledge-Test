@@ -28,6 +28,8 @@
             <p class="TheOpstion" onclick="answer('Option2')" >B) <span id="Option2"></span></p>
             <p class="TheOpstion" onclick="answer('Option3')" >C) <span id="Option3"></span></p>
             <p class="TheOpstion" onclick="answer('Option4')" >D) <span id="Option4"></span></p>
+            <!-- This span will help us to detect if no option has been choosen -->
+            <span id="nothing"> </span>
         </div>
     </div>
 

@@ -13,7 +13,7 @@ var Parts = [
 
         option4:`Users can permanently run enough instances to handle peak workloads.`,
 
-        correct:`Amazon EC2 instances can be launched on demand when needed.`
+        correct:`Amazon EC2 instances can be launched on demand when needed.`   
     }
 
     ,
@@ -55,13 +55,16 @@ var Parts = [
     
 ]
 
+//This varibale help us to check if any answer has been choosed
+var check ="NoneYet"
 
 
 
 
 
-timerOfTheEndOfTheQuestion(30);
 NextQuestion();
+
+timerOfTheEndOfTheQuestion(4);
 
 
 
@@ -76,12 +79,20 @@ function timerOfTheEndOfTheQuestion(seconds){
         if(seconds === 0){
 
             document.getElementById("timer").innerHTML = "Done";
+
+            alert(check);
+
+            // if no option has been choosed then choose the "nothing option"
+            if(check == "NoneYet" ){
+                answer("nothing");
+            }
+
             NextQuestion(document.getElementById("indexOfPart").value);
 
             //How to breake out of setinterval function
             //https://stackoverflow.com/questions/1795100/how-to-exit-from-setinterval
             // clearInterval(out);
-            seconds = 30;
+            seconds = 4;
         }else{
             document.getElementById("timer").innerHTML =  seconds + "s ";
         }
@@ -92,7 +103,7 @@ function timerOfTheEndOfTheQuestion(seconds){
 }
     
 function NextQuestion(){
-
+    check ="NoneYet";
 
     let indexOfPart = document.getElementById("indexOfPart").value;
 
@@ -119,8 +130,8 @@ function NextQuestion(){
 
     //How to Get the length of an object
     //https://www.tutorialrepublic.com/faq/how-to-get-the-length-of-a-javascript-object.php#:~:text=You%20can%20simply%20use%20the,of%20elements%20in%20that%20array.
-    var randomNumber = Math.floor((Math.random() * Parts.length ));
-    var randomPart = Parts[randomNumber];
+    let randomNumber = Math.floor((Math.random() * Parts.length ));
+    let randomPart = Parts[randomNumber];
 
     document.getElementById("TheQuestion").innerHTML = randomPart.question;
     document.getElementById("indexOfPart").value = randomNumber;
@@ -143,7 +154,9 @@ function NextQuestion(){
 function answer(id){
 
 
+    
     let chosenAnwer = document.getElementById(id).innerHTML;
+    
 
     //This index help us to indicat wich question the user is trying to answer that moment
     let indexOfPart = document.getElementById("indexOfPart").value;
@@ -155,12 +168,17 @@ function answer(id){
     console.log(correctAnswer);
 
 
-    if ( chosenAnwer === correctAnswer ){
+    if ( chosenAnwer === correctAnswer && check != "NoneYet" ){
         alert("Corret answer");
     }else{
         alert("False answer");
     }
+
+    check = "Yes";
+
 }
+
+
 
 
 
