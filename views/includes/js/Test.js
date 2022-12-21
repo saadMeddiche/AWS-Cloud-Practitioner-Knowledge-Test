@@ -56,7 +56,12 @@ var Parts = [
 ]
 
 //This varibale help us to check if any answer has been choosed
-var check ="NoneYet"
+var check ="NoneYet";
+
+//The counter of the end of one question
+var timer = "30";
+
+var out ;
 
 
 
@@ -64,7 +69,7 @@ var check ="NoneYet"
 
 NextQuestion();
 
-timerOfTheEndOfTheQuestion(4);
+timerOfTheEndOfTheQuestion(timer);
 
 
 
@@ -73,14 +78,11 @@ timerOfTheEndOfTheQuestion(4);
     
 function timerOfTheEndOfTheQuestion(seconds){
 
-    setInterval(function() {
+    out = setInterval(function() {
 
-        seconds--;
         if(seconds === 0){
 
             document.getElementById("timer").innerHTML = "Done";
-
-            alert(check);
 
             // if no option has been choosed then choose the "nothing option"
             if(check == "NoneYet" ){
@@ -92,17 +94,25 @@ function timerOfTheEndOfTheQuestion(seconds){
             //How to breake out of setinterval function
             //https://stackoverflow.com/questions/1795100/how-to-exit-from-setinterval
             // clearInterval(out);
-            seconds = 4;
+            seconds = timer;
         }else{
             document.getElementById("timer").innerHTML =  seconds + "s ";
         }
+        seconds--;
 
 
     
     },1000)
 }
+
     
 function NextQuestion(){
+
+    // if no option has been choosed then disable the n ext button
+    if(check == "NoneYet" ){
+        document.getElementById("NextBtn").disabled="true";
+    }
+
     check ="NoneYet";
 
     let indexOfPart = document.getElementById("indexOfPart").value;
@@ -147,6 +157,8 @@ function NextQuestion(){
 
    console.log(Parts);
     
+   //So the button can't be only disable  once in the first question , and in the next questions it will always be allowed 
+   document.getElementById("NextBtn").disabled=true;
 
 
 }
@@ -167,14 +179,28 @@ function answer(id){
     console.log(chosenAnwer);
     console.log(correctAnswer);
 
+    document.getElementById("NextBtn").disabled= false;
 
     if ( chosenAnwer === correctAnswer && check != "NoneYet" ){
-        alert("Corret answer");
+        // alert("Corret answer");
     }else{
-        alert("False answer");
+        // alert("False answer");
     }
 
     check = "Yes";
+
+}
+
+
+function Next(){
+
+    clearInterval(out);
+    timerOfTheEndOfTheQuestion(timer);
+    var out2 =setInterval(function() {
+        NextQuestion();
+        clearInterval(out2);
+    },1000);
+
 
 }
 

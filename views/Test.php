@@ -24,6 +24,7 @@
         </div>
 
         <div class="TheOpstions">
+            <span id="message"></span>
             <p class="TheOpstion" onclick="answer('Option1')" >A) <span id="Option1"></span></p>
             <p class="TheOpstion" onclick="answer('Option2')" >B) <span id="Option2"></span></p>
             <p class="TheOpstion" onclick="answer('Option3')" >C) <span id="Option3"></span></p>
@@ -36,10 +37,10 @@
     <div class="downStuff">
 
         <div class="HolderOfTestTimer">
-            <p class="TestTimer" id="timer">30s</p>
+            <p class="TestTimer" id="timer"></p>
         </div>
         <div class="HolderOfNextBtn">
-            <button class="NextBtn" id="NextBtn" onclick="NextQuestion()">Next Question</button>
+            <button class="NextBtn" id="NextBtn" onclick="Next()">Next Question</button>
         </div>
     </div>
 
