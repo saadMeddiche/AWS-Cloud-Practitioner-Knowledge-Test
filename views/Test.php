@@ -34,8 +34,8 @@
 
     <div class="downStuff">
 
-        <div class="HolderOfTimer">
-            <p class="Timer" id="timer"></p>
+        <div class="HolderOfTestTimer">
+            <p class="TestTimer" id="timer">30s</p>
         </div>
         <div class="HolderOfNextBtn">
             <button class="NextBtn">Next Question</button>
@@ -51,7 +51,7 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
     <!-- Incule the timer script -->
-    <script src="./includes/js/timer.js"></script>
+    <script src="./includes/js/timerTest.js"></script>
 
 <!-- The End of links -->
 

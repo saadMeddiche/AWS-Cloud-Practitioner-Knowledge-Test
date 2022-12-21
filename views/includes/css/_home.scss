@@ -1,0 +1,35 @@
+.holderOfHomeTimer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%;
+    height: 65%;
+
+    background-color: var(--Yellow);
+    
+    clip-path: circle(21%);
+
+    .onlycss{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: var(--super-dark-orange);
+    
+        clip-path: circle(19%);
+
+        .HomeTimer{
+            color: var(--Yellow);
+            font-size: 100px;
+
+            width: 100%;
+        }
+    }
+    }
+    

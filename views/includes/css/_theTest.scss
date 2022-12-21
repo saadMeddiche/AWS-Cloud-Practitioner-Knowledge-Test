@@ -48,41 +48,21 @@
     display: flex;
     justify-content: space-evenly;
 
-    .HolderOfTimer{
+    .HolderOfTestTimer{
         width: 45%;
 
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        .Timer{
+        .TestTimer{
             height: 100%;
             color: var(--Yellow);
             font-size: 50px;
         }
     }
 
-    .HolderOfNextBtn{
-        width: 45%;
-
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        .NextBtn{
-            cursor: pointer;
-            
-            border: 3px solid var(--very-dark-orange);
-            border-radius: 5px;
-
-            font-size: 30px;
-
-
-            padding: 5px;
-            color: var(--super-dark-orange);
-            font-weight: bold;
-            background-color: var(--Yellow);
-        }
-
-    }
+    //Next Button is here
+    
 
 
 }

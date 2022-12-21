@@ -63,6 +63,33 @@ that will be used in the website*/
   background-image: url("../img/bg-home3.png");
 }
 
+.holderOfHomeTimer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 65%;
+  background-color: var(--Yellow);
+  -webkit-clip-path: circle(21%);
+          clip-path: circle(21%);
+}
+.holderOfHomeTimer .onlycss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--super-dark-orange);
+  -webkit-clip-path: circle(19%);
+          clip-path: circle(19%);
+}
+.holderOfHomeTimer .onlycss .HomeTimer {
+  color: var(--Yellow);
+  font-size: 100px;
+  width: 100%;
+}
+
 .TheTest {
   display: flex;
   justify-content: space-evenly;
@@ -94,32 +121,16 @@ that will be used in the website*/
   display: flex;
   justify-content: space-evenly;
 }
-.downStuff .HolderOfTimer {
+.downStuff .HolderOfTestTimer {
   width: 45%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
-.downStuff .HolderOfTimer .Timer {
+.downStuff .HolderOfTestTimer .TestTimer {
   height: 100%;
   color: var(--Yellow);
   font-size: 50px;
-}
-.downStuff .HolderOfNextBtn {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.downStuff .HolderOfNextBtn .NextBtn {
-  cursor: pointer;
-  border: 3px solid var(--very-dark-orange);
-  border-radius: 5px;
-  font-size: 30px;
-  padding: 5px;
-  color: var(--super-dark-orange);
-  font-weight: bold;
-  background-color: var(--Yellow);
 }
 
 .holderOfStartBtn {
@@ -127,6 +138,7 @@ that will be used in the website*/
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 20%;
 }
 .holderOfStartBtn .StartBtn {
   font-size: 20px;
@@ -138,6 +150,23 @@ that will be used in the website*/
   height: 40px;
   width: 400px;
   cursor: pointer;
+}
+
+.HolderOfNextBtn {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.HolderOfNextBtn .NextBtn {
+  cursor: pointer;
+  border: 3px solid var(--very-dark-orange);
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 5px;
+  color: var(--super-dark-orange);
+  font-weight: bold;
+  background-color: var(--Yellow);
 }
 
 @media (min-width: 850px) {
