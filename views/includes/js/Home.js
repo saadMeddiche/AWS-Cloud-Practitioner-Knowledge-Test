@@ -1,9 +1,11 @@
-    function test(){
+    function ReadyGo(){
         var seconds = 3;
         
         setInterval(function() {
 
             //Play the sound of 3 2 1 GO
+            //How to use sound effect
+            //https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984#:~:text=The%20simplest%20way%20to%20add,starts%20playing%20the%20current%20audio.
             document.querySelector('#audio').play();
             
             document.getElementById("holderOfStartBtn").style.display="none";

@@ -17,18 +17,16 @@
     <div class="TheTest">
 
         <div class="TheQuestion">
-            <p>1) Why is AWS more economical than traditional data
-                centers for applications with varying compute
-                workloads?
+            <p id="TheQuestion">
             </p>
 
         </div>
 
         <div class="TheOpstions">
-            <p class="TheOpstion">A) Amazon EC2 costs are billed on a monthly basis.</p>
-            <p class="TheOpstion">B) Users retain full administrative access to their Amazon EC2 instances.</p>
-            <p class="TheOpstion">C) Amazon EC2 instances can be launched on demand when needed.</p>
-            <p class="TheOpstion">D) Users can permanently run enough instances to handle peak workloads.</p>
+            <p class="TheOpstion" id="Option1">A)</p>
+            <p class="TheOpstion" id="Option2">B)</p>
+            <p class="TheOpstion" id="Option3">C)</p>
+            <p class="TheOpstion" id="Option4">C)</p>
         </div>
     </div>
 
@@ -47,11 +45,11 @@
 
 <!-- =======links======= -->
 
-    <!-- Inconify -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+<!-- Inconify -->
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
-    <!-- Incule the timer script -->
-    <script src="./includes/js/timerTest.js"></script>
+<!-- Incule the timer script -->
+<script src="./includes/js/Test.js"></script>
 
 <!-- The End of links -->
 

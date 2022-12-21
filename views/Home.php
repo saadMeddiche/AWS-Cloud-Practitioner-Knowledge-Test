@@ -22,7 +22,7 @@
     </div>
 
     <div class="holderOfStartBtn" id="holderOfStartBtn">
-        <button onclick="test()" class="StartBtn">Start</button>
+        <button onclick="ReadyGo()" class="StartBtn">Start</button>
     </div>
 
 
@@ -36,7 +36,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
 <!-- Incule the timer script -->
-<script src="./includes/js/timerHome.js"></script>
+<script src="./includes/js/Home.js"></script>
 <!-- The End of links -->
 
 </html>
