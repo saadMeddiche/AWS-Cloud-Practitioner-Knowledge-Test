@@ -63,6 +63,14 @@ that will be used in the website*/
   background-image: url("../img/bg-home3.png");
 }
 
+.bodyOfResults {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  background-color: var(--super-dark-orange);
+}
+
 .holderOfHomeTimer {
   display: none;
   text-align: center;
@@ -107,6 +115,7 @@ that will be used in the website*/
   background-color: var(--very-dark-orange);
 }
 .TheTest .TheOpstions .TheOpstion {
+  cursor: pointer;
   margin: 10px;
   border: 2px solid var(--Yellow);
   border-radius: 10px;
@@ -129,6 +138,49 @@ that will be used in the website*/
   height: 100%;
   color: var(--Yellow);
   font-size: 50px;
+}
+
+.InformationOfUser {
+  align-items: center;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.InformationOfUser div {
+  display: flex;
+  justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  margin-top: 20px;
+}
+.InformationOfUser div input {
+  border: 4px solid var(--Yellow);
+  border-radius: 5px;
+  padding: 10px;
+  width: 50%;
+}
+.InformationOfUser div button {
+  padding: 5px;
+  width: 20%;
+  background-color: var(--Yellow);
+  border: 4px solid var(--dark-orange);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-orange);
+}
+
+.DescriptionOfTheReasonTofillTheInformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Yellow);
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
 }
 
 .holderOfStartBtn {

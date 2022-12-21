@@ -18,6 +18,15 @@
 
 }
 
+.bodyOfResults{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    background-color: var(--super-dark-orange);
+
+}
+
 // .questionImage{
 //     height: 30vh;
 //     background-position: center;

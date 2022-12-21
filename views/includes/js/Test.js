@@ -1,32 +1,36 @@
 var Parts = [
 
     part1 = {
-        question:`1) Why is AWS more economical than 
+        question:`Why is AWS more economical than 
         traditional data centers for applications with
         varying compute workloads?`,
 
-        option1:`A) Amazon EC2 costs are billed on a monthly basis`,
+        option1:`Amazon EC2 costs are billed on a monthly basis.`,
 
-        option2:`B) Users retain full administrative access to their Amazon EC2 instances.`,
+        option2:`Users retain full administrative access to their Amazon EC2 instances.`,
 
-        option3:`C) Amazon EC2 instances can be launched on demand when needed.`,
+        option3:`Amazon EC2 instances can be launched on demand when needed.`,
 
-        option4:`D) Users can permanently run enough instances to handle peak workloads.`
+        option4:`Users can permanently run enough instances to handle peak workloads.`,
+
+        correct:`Amazon EC2 instances can be launched on demand when needed.`
     }
 
     ,
 
     part2 = {
-        question:`2) Which AWS service would simplify
+        question:`Which AWS service would simplify
         the migration of a database to AWS?`,
 
-        option1:`A) AWS Storage Gateway`,
+        option1:`AWS Storage Gateway.`,
 
-        option2:`B) AWS Database Migration Service (AWS DMS)`,
+        option2:`AWS Database Migration Service (AWS DMS).`,
 
-        option3:`C) Amazon EC2`,
+        option3:`Amazon EC2`,
 
-        option4:`D) Amazon AppStream 2.0`
+        option4:`Amazon AppStream 2.0.`,
+
+        correct:`AWS Database Migration Service (AWS DMS).`
     }
 
     ,
@@ -36,13 +40,15 @@ var Parts = [
         buy, and immediately start using software solutions 
         in their AWS environment?`,
 
-        option1:`A) AWS Config`,
+        option1:`AWS Config.`,
 
-        option2:`B) AWS OpsWorks`,
+        option2:`AWS OpsWorks.`,
 
-        option3:`C) AWS SDK`,
+        option3:`AWS SDK.`,
 
-        option4:`D) AWS Marketplace`
+        option4:`AWS Marketplace.`,
+
+        correct:`AWS Marketplace.`
     }
 
 
@@ -54,7 +60,7 @@ var Parts = [
 
 
 
-timerOfTheEndOfTheQuestion(3);
+timerOfTheEndOfTheQuestion(30);
 NextQuestion();
 
 
@@ -64,34 +70,44 @@ NextQuestion();
     
 function timerOfTheEndOfTheQuestion(seconds){
 
-    var out = setInterval(function() {
+    setInterval(function() {
 
         seconds--;
         if(seconds === 0){
 
             document.getElementById("timer").innerHTML = "Done";
-            NextQuestion();
+            NextQuestion(document.getElementById("indexOfPart").value);
 
             //How to breake out of setinterval function
             //https://stackoverflow.com/questions/1795100/how-to-exit-from-setinterval
             // clearInterval(out);
-            seconds = 5;
+            seconds = 30;
         }else{
             document.getElementById("timer").innerHTML =  seconds + "s ";
         }
 
 
-        
-
-
-
-
+    
     },1000)
 }
     
-
 function NextQuestion(){
 
+
+    let indexOfPart = document.getElementById("indexOfPart").value;
+
+    // Because the indexOfPart is empty in the first time , we dont need to delete anything
+    if(indexOfPart !== ""){
+        Parts.splice(indexOfPart, 1);
+    }
+
+
+    
+
+    //So when the user unswer all the question , what will happen ?
+    if(Parts.length==0){
+        window.location.href ="./Results.php";              
+    }
     
     //How to Get an Object's Value by Index using JavaScript
     //https://bobbyhadz.com/blog/javascript-get-value-of-object-by-index#:~:text=To%20get%20a%20value%20of,values(obj)%5B1%5D%20.&text=Copied!
@@ -106,9 +122,9 @@ function NextQuestion(){
     var randomNumber = Math.floor((Math.random() * Parts.length ));
     var randomPart = Parts[randomNumber];
 
-    console.log(randomNumber);
-
     document.getElementById("TheQuestion").innerHTML = randomPart.question;
+    document.getElementById("indexOfPart").value = randomNumber;
+
 
     document.getElementById("Option1").innerHTML = randomPart.option1;
     document.getElementById("Option2").innerHTML = randomPart.option2;
@@ -116,15 +132,35 @@ function NextQuestion(){
     document.getElementById("Option4").innerHTML = randomPart.option4;
 
     //Delete the chosen part so it cannot repeat another time
-    Parts.splice(randomNumber, 1);
+    //Parts.splice(randomNumber, 1);
 
-   if(Parts.length==0){
-    
-   }
+   console.log(Parts);
     
 
 
 }
+
+function answer(id){
+
+
+    let chosenAnwer = document.getElementById(id).innerHTML;
+
+    let indexOfPart = document.getElementById("indexOfPart").value;
+
+    let correctAnswer = Parts[indexOfPart].correct;
+
+    console.log(indexOfPart);
+    console.log(chosenAnwer);
+    console.log(correctAnswer);
+
+
+    if ( chosenAnwer === correctAnswer ){
+        alert("Corret answer");
+    }else{
+        alert("False answer");
+    }
+}
+
 
 
 

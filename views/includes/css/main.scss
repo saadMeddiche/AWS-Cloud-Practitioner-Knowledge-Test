@@ -13,6 +13,9 @@
 //Import the style Of The Test [Question and options]
 @use './theTest';
 
+//Import the style of results page
+@use './results';
+
 //Import all buttons that has been used in the site
 @use './buttons';
 

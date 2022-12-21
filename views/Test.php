@@ -17,16 +17,17 @@
     <div class="TheTest">
 
         <div class="TheQuestion">
+            <input id="indexOfPart" type="hidden" value="">
             <p id="TheQuestion">
             </p>
 
         </div>
 
         <div class="TheOpstions">
-            <p class="TheOpstion" id="Option1">A)</p>
-            <p class="TheOpstion" id="Option2">B)</p>
-            <p class="TheOpstion" id="Option3">C)</p>
-            <p class="TheOpstion" id="Option4">C)</p>
+            <p class="TheOpstion" onclick="answer('Option1')" >A) <span id="Option1"></span></p>
+            <p class="TheOpstion" onclick="answer('Option2')" >B) <span id="Option2"></span></p>
+            <p class="TheOpstion" onclick="answer('Option3')" >C) <span id="Option3"></span></p>
+            <p class="TheOpstion" onclick="answer('Option4')" >D) <span id="Option4"></span></p>
         </div>
     </div>
 
@@ -36,7 +37,7 @@
             <p class="TestTimer" id="timer">30s</p>
         </div>
         <div class="HolderOfNextBtn">
-            <button class="NextBtn">Next Question</button>
+            <button class="NextBtn" id="NextBtn" onclick="NextQuestion()">Next Question</button>
         </div>
     </div>
 

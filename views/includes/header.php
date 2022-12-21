@@ -13,7 +13,7 @@
     <ul class="TheLinks">
         <li class="TheLink"><a href="./Home.php">Home</a></li>
         <li class="TheLink"><a href="./Test.php">Test</a></li>
-        <li class="TheLink"><a href="./">Results</a></li>
+        <li class="TheLink"><a href="./Results.php">Results</a></li>
         <li class="TheLink"><a href="">Help</a></li>
     </ul>
 </div>
