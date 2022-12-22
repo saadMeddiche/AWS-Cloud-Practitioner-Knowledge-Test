@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-
-
 $Description = array(
     "1" => array(
 
@@ -33,7 +31,38 @@ $Description = array(
         "
     )
 );
+
+
+//https://stackoverflow.com/questions/34056632/using-php-loops-inside-mailtext-mail
+
+$mailtext ='<div class="Message">
+<div class="Salutation">
+    Hi, <b>'. $_POST["nameOfUser"] .'</b>
+</div>
+
+<div class="BodyOfMessage">
+    <div class="correctAndFalseQuestion">
+        <br>You Have <b> '.$_SESSION["correctAnswers"].' </b> correct questions from <b> '.$_SESSION["correctAnswers"] + $_SESSION["falseAnswers"] .'</b>
+    </div>
+
+    <div class="CorrectionOfFalseQuestion">
+        <br><b>This is the correction of each question that you get it fault </b> <br>
+        ';
+        for ($i = 0; $i < $_SESSION["falseAnswers"] + ($_SESSION["falseAnswers"] - 1); $i++) {
+
+            if ($_SESSION["indexOfselectedDescriptions"][$i] != ",") {
+                $mailtext.='<br> <br> <b>'.$Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"].'</b>
+                <br>'.$Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"].'';
+            }
+        };
+
+        $mailtext.='
+
+    </div>
+</div>
+</div>';
 ?>
+
 <div class="Message">
     <div class="Salutation">
         Hi, <b><?php echo $_POST["nameOfUser"] ?></b>
@@ -47,18 +76,61 @@ $Description = array(
         <div class="CorrectionOfFalseQuestion">
             <br><b>This is the correction of each question that you get it fault </b> <br>
             <?php
-                for ($i = 0; $i < $_SESSION["falseAnswers"] + ($_SESSION["falseAnswers"] - 1); $i++) {
-                    if ($_SESSION["indexOfselectedDescriptions"][$i] != ",") {
-                        echo "<br> <br> <b>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"] ."</b>";
+            for ($i = 0; $i < $_SESSION["falseAnswers"] + ($_SESSION["falseAnswers"] - 1); $i++) {
+                if ($_SESSION["indexOfselectedDescriptions"][$i] != ",") {
+                    echo "<br> <br> <b>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"] . "</b>";
 
-                        echo "<br>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"];
-                    }
-                };
+                    echo "<br>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"];
+                }
+            };
             ?>
 
         </div>
     </div>
-
-
 </div>
+
+
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+
+require '../phpmailer/src/Exception.php';
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
+
+
+
+if (isset($_POST["SendResultsButton"])) {
+
+
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username  = "dummyaemaila95@gmail.com";
+    $mail->Password = "juryxlperbfyjmvu";
+    $mail->SMTPSecure = "ssl";
+    $mail->Port = 465;
+
+    $mail->setFrom("DummyEmail12121213@gmail.com");
+    $mail->addAddress($_POST["emailOfUser"]);
+
+    $mail->isHTML(true);
+
+    $mail->Subject = "test";
+
+    $mail->Body = $mailtext;
+    
+    
+
+    $mail->send();
+}
+
+header("location:")
+?>
+
 
