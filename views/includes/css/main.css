@@ -162,16 +162,6 @@ that will be used in the website*/
   padding: 10px;
   width: 50%;
 }
-.InformationOfUser div button {
-  padding: 5px;
-  width: 20%;
-  background-color: var(--Yellow);
-  border: 4px solid var(--dark-orange);
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--dark-orange);
-}
 
 .DescriptionOfTheReasonTofillTheInformation {
   display: flex;
@@ -217,6 +207,18 @@ that will be used in the website*/
   color: var(--super-dark-orange);
   font-weight: bold;
   background-color: var(--Yellow);
+}
+
+.SendResultsButton {
+  padding: 5px;
+  width: 20%;
+  background-color: var(--Yellow);
+  border: 4px solid var(--dark-orange);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-orange);
+  cursor: pointer;
 }
 
 @media (min-width: 850px) {

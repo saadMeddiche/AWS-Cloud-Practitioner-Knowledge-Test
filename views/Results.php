@@ -20,20 +20,22 @@
     </div>
 
     <div class="InformationOfUser">
+        <form action="./Send-Results.php" method="post">
 
-        <div>
-            <input type="text" placeholder="Name..."> 
+            <div>
+                <input type="text" name="nameOfUser" placeholder="Name...">
 
-        </div>
+            </div>
 
-        <div>
-            <input type="email" placeholder="Email..."> </input>
-        </div>
+            <div>
+                <input type="email" name="emailOfUser" placeholder="Email..."> 
+            </div>
 
-        <div>
-            <button>Send</button>
-        </div>
+            <div>
+                <button type="submit" class="SendResultsButton">Send</button>
+            </div>
 
+        </form>
     </div>
 
 

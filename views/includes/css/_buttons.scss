@@ -52,3 +52,22 @@
   }
 
 }
+
+
+//Send Button that is in the result page
+.SendResultsButton{
+  padding:5px;
+  width: 20%;
+
+  background-color: var(--Yellow);
+
+  border: 4px solid var(--dark-orange);
+  border-radius: 10px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-orange);
+
+  cursor: pointer;
+
+}
