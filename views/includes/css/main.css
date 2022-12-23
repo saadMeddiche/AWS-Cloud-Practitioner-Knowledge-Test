@@ -136,7 +136,11 @@ that will be used in the website*/
   border: 2px solid var(--Yellow);
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 10px;
   background-color: var(--very-dark-orange);
+}
+.TheTest .TheOpstions .TheOpstion:active {
+  color: black;
 }
 
 .downStuff {

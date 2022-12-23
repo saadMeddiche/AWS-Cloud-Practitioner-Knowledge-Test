@@ -170,6 +170,12 @@
         document.getElementById("correctAnswers").value = correctAnswers;
         document.getElementById("falseAnswers").value = falseAnswers;
 
+        //change the color of option to the default [White]
+        for(var i =1 ;i<5;i++){
+            document.getElementById("Option"+i).style.color="White";
+            document.getElementById("Test"+i).style.color="White";
+        }
+
         console.log(document.getElementById("correctAnswers").value);
         console.log(document.getElementById("falseAnswers").value);
 
@@ -298,6 +304,28 @@
             document.getElementById("circle"+i).style.display="none";
         }
     }
+
+    //This function change the style of the selected option
+    function changeStyleOfOption(option){
+
+        for(var i =1 ;i<5;i++){
+            document.getElementById("Option"+i).style.color="White";
+
+            document.getElementById("Test"+i).style.color="White";
+
+            document.getElementById("Option"+i).style.fontWeight = "10";
+            document.getElementById("Test"+i).style.fontWeight = "10";
+
+
+        }
+        document.getElementById("Option"+option).style.fontWeight = "1000";
+        document.getElementById("Test"+option).style.fontWeight = "1000";
+
+        document.getElementById("Option"+option).style.color="Black";
+        document.getElementById("Test"+option).style.color="Black";
+
+    }
+    
 
  
 

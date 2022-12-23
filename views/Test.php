@@ -15,7 +15,7 @@
     <!-- ===The end Of the Header=== -->
 
     <div class="messageTest" id="messageTest">
-        <p id="messageTest">Pleaze check <a href="./Help.php"><b>>>Help<<</b></a> Before Your starting the test</p>
+        <p id="messageTest">Pleaze check <a href="./Help.php"><b> >>Help<< </b></a> Before Your starting the test</p>
     </div>
 
     <div class="ProgressBar" id="ProgressBar">
@@ -32,10 +32,11 @@
         </div>
 
         <div class="TheOpstions">
-            <p class="TheOpstion" onclick="answer('Option1')">A) <span id="Option1"></span></p>
-            <p class="TheOpstion" onclick="answer('Option2')">B) <span id="Option2"></span></p>
-            <p class="TheOpstion" onclick="answer('Option3')">C) <span id="Option3"></span></p>
-            <p class="TheOpstion" onclick="answer('Option4')">D) <span id="Option4"></span></p>
+        
+            <p class="TheOpstion" onclick="answer('Option1'),changeStyleOfOption('1')" id="Test1">A) <span id="Option1"></span></p>
+            <p class="TheOpstion" onclick="answer('Option2'),changeStyleOfOption('2')" id="Test2">B) <span id="Option2"></span></p>
+            <p class="TheOpstion" onclick="answer('Option3'),changeStyleOfOption('3')" id="Test3">C) <span id="Option3"></span></p>
+            <p class="TheOpstion" onclick="answer('Option4'),changeStyleOfOption('4')" id="Test4">D) <span id="Option4"></span></p>
             <!-- This span will help us to detect if no option has been choosen -->
             <span id="nothing"> </span>
         </div>

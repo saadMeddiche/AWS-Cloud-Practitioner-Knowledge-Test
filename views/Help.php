@@ -12,7 +12,7 @@ $_SESSION["AccessToHelp"] = "AccessToHelp";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./includes/css/main.css">
 
-    <title>Thank You</title>
+    <title>Help</title>
 </head>
 
 <body class="bodyOfHelp">
