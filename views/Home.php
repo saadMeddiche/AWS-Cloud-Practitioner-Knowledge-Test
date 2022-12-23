@@ -16,7 +16,7 @@
 
     <div class="holderOfHomeTimer" id="holderOfHomeTimer">
         <div class="onlycss">
-        <audio id="audio" src="./includes/img/timerSound.mp3"></audio>
+            <audio id="audio" src="./includes/img/timerSound.mp3"></audio>
             <p class="HomeTimer" id="timerHome">3</p>
         </div>
     </div>

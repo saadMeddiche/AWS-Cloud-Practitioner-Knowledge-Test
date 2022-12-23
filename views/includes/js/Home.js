@@ -25,7 +25,6 @@
                 },1000)
 
 
-                exist();
             }
     
             document.getElementById("timerHome").innerHTML =  seconds ;

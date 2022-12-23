@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
@@ -15,11 +18,13 @@
     <?php include "./includes/header.php"; ?>
     <!-- ===The end Of the Header=== -->
 
-    <div class="DescriptionOfTheReasonTofillTheInformation">
+
+
+    <div class="DescriptionOfTheReasonTofillTheInformation" id="DescriptionOfTheReasonTofillTheInformation">
         In Order to see your results , Pleaze Enter your Name and Your Email. Then check Your Email For the Results !
     </div>
 
-    <div class="InformationOfUser">
+    <div class="InformationOfUser" id="InformationOfUser">
         <form action="./Send-Results.php" method="post">
 
             <div>
@@ -28,7 +33,7 @@
             </div>
 
             <div>
-                <input type="email" name="emailOfUser" placeholder="Email..."> 
+                <input type="email" name="emailOfUser" placeholder="Email...">
             </div>
 
             <div>
@@ -37,6 +42,8 @@
 
         </form>
     </div>
+
+
 
 
 
@@ -52,3 +59,32 @@
 <!-- The End of links -->
 
 </html>
+
+<?php
+session_start();
+
+if (!isset($_SESSION["AccessToResults"])) {
+    echo "
+        <script>
+        document.getElementById('InformationOfUser').style.visibility = 'hidden';
+        document.getElementById('DescriptionOfTheReasonTofillTheInformation').innerHTML='You should pass the test First , Then You can see your results';
+        </script>";
+}
+
+
+
+
+//the changes that will after the send of the mailtext
+if (isset($_SESSION["GoBack"])) {
+
+    echo "
+    <script>
+    document.getElementById('InformationOfUser').style.visibility = 'hidden';
+    document.getElementById('DescriptionOfTheReasonTofillTheInformation').innerHTML='The Results Has been Send To your Email , Pleaze check your Inbox :D';
+    </script>";
+
+
+    unset($_SESSION["GoBack"]);
+}
+
+?>

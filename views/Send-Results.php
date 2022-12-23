@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+unset($_SESSION["AccessToResults"]);
+
+
+//This session help us to know if we came from this page
+$_SESSION["GoBack"]= "Im not empty";
+
 $Description = array(
     "1" => array(
 
@@ -130,7 +136,7 @@ if (isset($_POST["SendResultsButton"])) {
     $mail->send();
 }
 
-header("location:")
+header("location:./Results.php");
 ?>
 
 

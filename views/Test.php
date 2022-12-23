@@ -14,6 +14,10 @@
     <?php include "./includes/header.php"; ?>
     <!-- ===The end Of the Header=== -->
 
+    <div class="ProgressBar" id="ProgressBar">
+        
+    </div>
+
     <div class="TheTest">
 
         <div class="TheQuestion">
@@ -32,8 +36,10 @@
             <span id="nothing"> </span>
         </div>
 
+        <!-- Reason to make this div ?  to send a value from js to php so i can use for the email-->
         <div hidden>
             <form action="./Stock-Results.php" method="post">
+                <input type="text" id="AccessToResults" name="AccessToResults">
                 <input type="text" id="indexOfselectedDescriptions" name="indexOfselectedDescriptions">
                 <input type="text" id="correctAnswers" name="correctAnswers" value="">
                 <input type="text" id="falseAnswers" name="falseAnswers" value="">
@@ -46,10 +52,10 @@
     <div class="downStuff">
 
         <div class="HolderOfTestTimer">
-            <p class="TestTimer" id="timer"></p>
+            <p class="TestTimer" id="timer">...</p>
         </div>
         <div class="HolderOfNextBtn">
-            <button class="NextBtn" id="NextBtn" onclick="Next()">Next Question</button>
+            <button class="NextBtn" id="NextBtn" onclick="Next()" disabled>Next Question</button>
         </div>
     </div>
 
@@ -62,8 +68,7 @@
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
 <!-- Incule the timer script -->
-<?php include './includes/js/TestScript.php'; ?>
-
+<script src="./includes/js/Test.js"></script>
 <!-- The End of links -->
 
 

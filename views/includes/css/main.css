@@ -102,7 +102,7 @@ that will be used in the website*/
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 50%;
   color: var(--super-dark-orange);
   color: white;
 }
@@ -138,6 +138,27 @@ that will be used in the website*/
   height: 100%;
   color: var(--Yellow);
   font-size: 50px;
+}
+
+.ProgressBar {
+  display: inline-flex;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+.ProgressBar .holderOfOneCircle {
+  width: 10%;
+  height: 100%;
+  background-color: var(--Yellow);
+  -webkit-clip-path: circle(20%);
+          clip-path: circle(20%);
+}
+.ProgressBar .holderOfOneCircle .onlycssCirlce {
+  width: 100%;
+  height: 100%;
+  background-color: var(--super-dark-orange);
+  -webkit-clip-path: circle(15%);
+          clip-path: circle(15%);
 }
 
 .InformationOfUser {

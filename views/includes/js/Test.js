@@ -1,4 +1,3 @@
-<script>
     var Parts = [
 
         part1 = {
@@ -81,9 +80,12 @@
     //So we can stop the setinterval function
     var out;
 
+    var FirstLenght = Parts.length;
 
 
 
+
+    progress();
 
     NextQuestion();
 
@@ -107,11 +109,11 @@
                     answer("nothing");
                 }
 
-                NextQuestion(document.getElementById("indexOfPart").value);
+                NextQuestion();
+                progressFillCircles();
 
                 //How to breake out of setinterval function
                 //https://stackoverflow.com/questions/1795100/how-to-exit-from-setinterval
-                // clearInterval(out);
                 seconds = timer;
             } else {
                 document.getElementById("timer").innerHTML = seconds + "s ";
@@ -174,6 +176,7 @@
         //So when the user unswer all the question , what will happen ?
         if (Parts.length == 0) {
             // window.location.href = "./Results.php";
+            document.getElementById("AccessToResults").value="YouHaveAccess";
             document.getElementById("insertAnswers").click();
         }
 
@@ -244,17 +247,39 @@
 
     }
 
-
     function Next() {
 
         clearInterval(out);
         timerOfTheEndOfTheQuestion(timer);
+        document.getElementById("timer").innerHTML = "...";
+        NextQuestion();
 
-        var out2 = setInterval(function() {
-            NextQuestion();
-            clearInterval(out2);
-        }, 1000);
+        progressFillCircles();
+
 
 
     }
-</script>
+
+    //This function only print the circles 
+    function progress(){
+
+        for(let i =0 ; i<FirstLenght;i++){
+            document.getElementById("ProgressBar").innerHTML+= `
+            <div class="holderOfOneCircle" id="holderOfOneCircle">
+                <div class="onlycssCirlce" id="circle${i}">
+                </div>
+            </div>
+            `;
+        }
+    }
+
+    //This function fill the circle of the progress bar 
+    function progressFillCircles(){
+        for(let i =0 ;i<FirstLenght-Parts.length;i++){
+            document.getElementById("circle"+i).style.display="none";
+        }
+    }
+
+ 
+
+
