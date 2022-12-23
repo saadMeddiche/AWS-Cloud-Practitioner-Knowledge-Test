@@ -56,6 +56,10 @@
 <!-- Cdn Of Jquery -->
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 
+
+<!-- include the script that animate the stepper -->
+<script src="./includes/js/step.js"></script>
+
 <!-- The End of links -->
 
 </html>
@@ -63,6 +67,7 @@
 <?php
 session_start();
 
+// If the user didnt finish all the question ! then he can see his results
 if (!isset($_SESSION["AccessToResults"])) {
     echo "
         <script>

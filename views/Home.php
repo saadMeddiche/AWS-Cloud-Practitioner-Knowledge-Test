@@ -32,11 +32,11 @@
 <!-- Inconify -->
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
-<!-- Cdn Of Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
 <!-- Incule the timer script -->
 <script src="./includes/js/Home.js"></script>
 <!-- The End of links -->
+
+<!-- include the script that animate the stepper -->
+<script src="./includes/js/step.js"></script>
 
 </html>

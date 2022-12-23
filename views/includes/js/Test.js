@@ -59,6 +59,25 @@
 
         }
 
+        ,
+
+        part4 = {
+            question: `4) Which AWS networking service enables a company to create a virtual network within AWS?`,
+
+            option1: `AWS Config.`,
+
+            option2: `Amazon Route 53.`,
+
+            option3: `AWS Direct Connect.`,
+
+            option4: `Amazon Virtual Private Cloud (Amazon VPC).`,
+
+            correct: `Amazon Virtual Private Cloud (Amazon VPC).`,
+
+            indexOfDescription: 4
+
+        }
+
 
 
     ]

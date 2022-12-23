@@ -1,0 +1,36 @@
+.HolderOfHelpDescription{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: fit-content;
+    width: 65%;
+
+    padding: 10px;
+
+    background-color: var(--very-dark-orange);
+
+    border: 3px solid var(--Yellow);
+    border-radius: 10px;
+
+    .Description{
+        padding-bottom: 5%;
+        text-align: center;
+        color: var(--Yellow);
+        width: 100%;
+        
+    }
+
+    .instruction{
+        text-align: center;
+        width: 100%;
+
+        p{
+            color: white;
+            b{
+                color: var(--Yellow);
+            }
+        }
+
+    }
+}

@@ -44,6 +44,14 @@ that will be used in the website*/
   padding: 10px;
   color: var(--Yellow);
 }
+.navbare .TheLinks .active {
+  background-color: var(--super-dark-orange);
+  border-radius: 10px;
+}
+.navbare .TheLinks .active a {
+  padding: 10px;
+  color: var(--Yellow);
+}
 
 .bodyOfTest {
   display: flex;
@@ -64,6 +72,14 @@ that will be used in the website*/
 }
 
 .bodyOfResults {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  background-color: var(--super-dark-orange);
+}
+
+.bodyOfHelp {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -161,6 +177,52 @@ that will be used in the website*/
           clip-path: circle(15%);
 }
 
+.messageTest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  height: 50%;
+}
+.messageTest p {
+  color: var(--Yellow);
+}
+.messageTest p a {
+  color: var(--Yellow);
+}
+
+.HolderOfHelpDescription {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 65%;
+  padding: 10px;
+  background-color: var(--very-dark-orange);
+  border: 3px solid var(--Yellow);
+  border-radius: 10px;
+}
+.HolderOfHelpDescription .Description {
+  padding-bottom: 5%;
+  text-align: center;
+  color: var(--Yellow);
+  width: 100%;
+}
+.HolderOfHelpDescription .instruction {
+  text-align: center;
+  width: 100%;
+}
+.HolderOfHelpDescription .instruction p {
+  color: white;
+}
+.HolderOfHelpDescription .instruction p b {
+  color: var(--Yellow);
+}
+
 .InformationOfUser {
   align-items: center;
   width: 100%;
@@ -239,6 +301,25 @@ that will be used in the website*/
   font-size: 20px;
   font-weight: bold;
   color: var(--dark-orange);
+  cursor: pointer;
+}
+
+.holderOfStartTest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+.holderOfStartTest .StartTest {
+  font-size: 20px;
+  color: var(--Yellow);
+  background-color: var(--super-dark-orange);
+  border: 3px solid var(--Yellow);
+  border-radius: 10px;
+  margin-top: 10vh;
+  height: 40px;
+  width: 400px;
   cursor: pointer;
 }
 

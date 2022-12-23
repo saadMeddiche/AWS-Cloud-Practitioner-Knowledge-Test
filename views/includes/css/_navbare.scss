@@ -18,6 +18,7 @@
         width: 100%;
     }
 
+    //It will only be appear in the mobile version
     .menu-icon{
         display: none;
     }
@@ -38,6 +39,8 @@
                 color: var(--super-dark-orange);
             }
 
+            
+
             &:hover{
                 background-color: var(--super-dark-orange);
                 border-radius: 10px;
@@ -46,6 +49,15 @@
                         color: var(--Yellow);
                     }
             }
+        }
+
+        .active{
+            background-color: var(--super-dark-orange);
+            border-radius: 10px;
+                a{  
+                    padding: 10px;
+                    color: var(--Yellow);
+                }
         }
         
     }

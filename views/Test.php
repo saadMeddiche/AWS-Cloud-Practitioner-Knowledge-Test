@@ -14,11 +14,15 @@
     <?php include "./includes/header.php"; ?>
     <!-- ===The end Of the Header=== -->
 
-    <div class="ProgressBar" id="ProgressBar">
-        
+    <div class="messageTest" id="messageTest">
+        <p id="messageTest">Pleaze check <a href="./Help.php"><b>>>Help<<</b></a> Before Your starting the test</p>
     </div>
 
-    <div class="TheTest">
+    <div class="ProgressBar" id="ProgressBar">
+
+    </div>
+
+    <div class="TheTest" id="TheTest">
 
         <div class="TheQuestion">
             <input id="indexOfPart" type="hidden" value="">
@@ -49,7 +53,7 @@
 
     </div>
 
-    <div class="downStuff">
+    <div class="downStuff" id="downStuff">
 
         <div class="HolderOfTestTimer">
             <p class="TestTimer" id="timer">...</p>
@@ -71,5 +75,31 @@
 <script src="./includes/js/Test.js"></script>
 <!-- The End of links -->
 
+<!-- include the script that animate the stepper -->
+<script src="./includes/js/step.js"></script>
+
 
 </html>
+
+<?php
+session_start();
+if (!isset($_SESSION["AccessToHelp"])) {
+    echo "
+    <script>
+        document.getElementById('TheTest').style.display = 'none';
+        document.getElementById('ProgressBar').style.display = 'none';
+        document.getElementById('downStuff').style.display = 'none';
+    </script>
+    ";
+} else {
+    echo "
+    <script>
+        document.getElementById('messageTest').style.display = 'none';
+    </script>
+
+";
+}
+unset($_SESSION["AccessToHelp"]);
+
+
+?>

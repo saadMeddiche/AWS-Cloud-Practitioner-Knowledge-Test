@@ -9,6 +9,9 @@
             document.querySelector('#audio').play();
             
             document.getElementById("holderOfStartBtn").style.display="none";
+            if(document.URL==("http://localhost/AWS-Cloud-Practitioner-Knowledge-Test/views/Help.php")){
+                document.getElementById("HolderOfHelpDescription").style.display="none";
+            }
             document.getElementById("holderOfHomeTimer").style.display="block";
 
             if(seconds == 0){
