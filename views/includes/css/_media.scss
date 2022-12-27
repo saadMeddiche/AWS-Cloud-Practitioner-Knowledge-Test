@@ -1,5 +1,4 @@
 //This will happen id the screen > 850px
-
 @media (min-width:850px){
 
    //The media of the navbar
@@ -147,4 +146,17 @@
     
     
     }
+
+    //cut the size of the timer by half
+    .holderOfHomeTimer {
+
+        .onlycss{
+
+            .HomeTimer{
+                font-size: 50px;
+            }
+        }
+    }
+    
+
 }

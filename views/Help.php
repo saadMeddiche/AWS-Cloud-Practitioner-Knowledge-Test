@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["AccessToHelp"] = "AccessToHelp";
+$_SESSION["AccessToTest"] = "AccessToTest";
 
 ?>
 <!DOCTYPE html>
@@ -60,9 +60,11 @@ $_SESSION["AccessToHelp"] = "AccessToHelp";
 
 <!-- Incule the timer script -->
 <script src="./includes/js/Home.js"></script>
-<!-- The End of links -->
 
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
+
+<!-- The End of links -->
+
 
 </html>

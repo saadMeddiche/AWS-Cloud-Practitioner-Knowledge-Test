@@ -25,10 +25,8 @@
     <div class="TheTest" id="TheTest">
 
         <div class="TheQuestion">
-            <input id="indexOfPart" type="hidden" value="">
             <p id="TheQuestion">
             </p>
-
         </div>
 
         <div class="TheOpstions">
@@ -37,14 +35,11 @@
             <p class="TheOpstion" onclick="answer('Option2'),changeStyleOfOption('2')" id="Test2">B) <span id="Option2"></span></p>
             <p class="TheOpstion" onclick="answer('Option3'),changeStyleOfOption('3')" id="Test3">C) <span id="Option3"></span></p>
             <p class="TheOpstion" onclick="answer('Option4'),changeStyleOfOption('4')" id="Test4">D) <span id="Option4"></span></p>
-            <!-- This span will help us to detect if no option has been choosen -->
-            <span id="nothing"> </span>
         </div>
 
         <!-- Reason to make this div ?  to send a value from js to php so i can use for the email-->
         <div hidden>
             <form action="./Stock-Results.php" method="post">
-                <input type="text" id="AccessToResults" name="AccessToResults">
                 <input type="text" id="indexOfselectedDescriptions" name="indexOfselectedDescriptions">
                 <input type="text" id="correctAnswers" name="correctAnswers" value="">
                 <input type="text" id="falseAnswers" name="falseAnswers" value="">
@@ -84,7 +79,10 @@
 
 <?php
 session_start();
-if (!isset($_SESSION["AccessToHelp"])) {
+
+//If the user didn't visit the help page yet
+//Hide every thing and show a message
+if (!isset($_SESSION["AccessToTest"])) {
     echo "
     <script>
         document.getElementById('TheTest').style.display = 'none';
@@ -100,7 +98,7 @@ if (!isset($_SESSION["AccessToHelp"])) {
 
 ";
 }
-unset($_SESSION["AccessToHelp"]);
 
+// unset($_SESSION["AccessToHelp"]);
 
 ?>

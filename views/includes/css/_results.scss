@@ -1,3 +1,4 @@
+//This is the style of the "insert form" when the user want to send the results to the email
 .InformationOfUser{
     
     align-items: center;
@@ -24,6 +25,7 @@
     }
 }
 
+//This is the style of the message that indicate wich state we are in
 .messageOfResults{
     height: 10%;
     width: 100%;
@@ -37,6 +39,7 @@
 
 }
 
+//this is the style of the options
 .choices{
     display: flex;
     justify-content: space-between;
@@ -84,6 +87,7 @@
     }
 }
 
+//this is the style of the results
 .Message{
     height: fit-content;
     width: 90%;

@@ -56,6 +56,7 @@ that will be used in the website*/
 .bodyOfTest {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   height: 100%;
   background-color: var(--super-dark-orange);
 }
@@ -118,7 +119,9 @@ that will be used in the website*/
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   color: var(--super-dark-orange);
   color: white;
 }
@@ -145,6 +148,7 @@ that will be used in the website*/
 
 .downStuff {
   width: 100%;
+  height: 20%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -492,6 +496,9 @@ that will be used in the website*/
     opacity: 1;
     -webkit-clip-path: circle(100% at center);
             clip-path: circle(100% at center);
+  }
+  .holderOfHomeTimer .onlycss .HomeTimer {
+    font-size: 50px;
   }
 }
 * {

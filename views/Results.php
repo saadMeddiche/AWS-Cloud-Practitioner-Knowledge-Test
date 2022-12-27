@@ -67,13 +67,17 @@ session_start();
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
 
+<!-- include the script that animate the stepper -->
 <script src="./includes/js/sender.js"></script>
 
 <!-- The End of links -->
 
 </html>
+
 <?php
 
+//If the user didn't pass the test yet
+/* Hide the "choice Book" and diplay a message*/
 if (!isset($_SESSION["AccessToResults"])) {
     echo "
     <script>
@@ -82,20 +86,5 @@ if (!isset($_SESSION["AccessToResults"])) {
     </script>";
 }
 
-if(isset($_SESSION["GoBack"])){
-
-    echo "
-    <script>
-    document.getElementById('messageOfResults').innerHTML = 'The resutls has been sent successfuly to your email :D !';
-    document.getElementById('messageOfResults').style.display = 'block';
-
-    </script>
-    ";
-
-    unset($_SESSION["GoBack"]);
-}
-
-
-
-
+// unset($_SESSION["AccessToResults"]);
 ?>

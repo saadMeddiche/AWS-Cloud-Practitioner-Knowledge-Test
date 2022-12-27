@@ -1,10 +1,6 @@
 <?php
+/* Send The results of the test to the email */
 session_start();
-
-unset($_SESSION["AccessToResults"]);
-
-//This session help us to know if we came from this page
-$_SESSION["GoBack"] = "Im not empty";
 
 $Description = array(
     "1" => array(
@@ -76,33 +72,6 @@ $mailtext .= '
 </div>
 </div>';
 ?>
-
-<div class="Message">
-    <div class="Salutation">
-        Hi, <b><?php echo $_POST["nameOfUser"] ?></b>
-    </div>
-
-    <div class="BodyOfMessage">
-        <div class="correctAndFalseQuestion">
-            <br>You Have <b><?php echo $_SESSION["correctAnswers"] ?></b> correct questions from <b><?php echo $_SESSION["correctAnswers"] + $_SESSION["falseAnswers"] ?></b>
-        </div>
-
-        <div class="CorrectionOfFalseQuestion">
-            <br><b>This is the correction of each question that you get it fault </b> <br>
-            <?php
-            for ($i = 0; $i < $_SESSION["falseAnswers"] + ($_SESSION["falseAnswers"] - 1); $i++) {
-                if ($_SESSION["indexOfselectedDescriptions"][$i] != ",") {
-                    echo "<br> <br> <b>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"] . "</b>";
-
-                    echo "<br>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"];
-                }
-            };
-            ?>
-
-        </div>
-    </div>
-</div>
-
 
 <?php
 

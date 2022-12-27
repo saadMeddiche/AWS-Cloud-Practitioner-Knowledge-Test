@@ -1,16 +1,20 @@
 .bodyOfTest{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
     height: 100%;
+
     background-color: var(--super-dark-orange);
 }
 
 .bodyOfHome{
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
-    background-color: var(--super-dark-orange);
 
+    height: 100%;
+
+    background-color: var(--super-dark-orange);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,7 +26,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     height: 100%;
+
     background-color: var(--super-dark-orange);
 
 }
@@ -31,6 +37,8 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     height: 100%;
+    
     background-color: var(--super-dark-orange);
 }

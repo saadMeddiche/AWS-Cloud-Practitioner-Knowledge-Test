@@ -1,7 +1,6 @@
 <?php
-
-//This session help us to know if we came from this page
-
+/* this file is included in Results.php */
+/* This array contain the description of each question*/
 $Description = array(
     "1" => array(
 

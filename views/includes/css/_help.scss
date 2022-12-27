@@ -1,3 +1,4 @@
+// The style of the instruction in the help page
 .HolderOfHelpDescription{
     display: flex;
     flex-wrap: wrap;
@@ -15,8 +16,10 @@
 
     .Description{
         padding-bottom: 5%;
+
         text-align: center;
         color: var(--Yellow);
+        
         width: 100%;
         
     }
@@ -33,4 +36,6 @@
         }
 
     }
+
+    //check the _buttons.scss for the startbtn
 }
