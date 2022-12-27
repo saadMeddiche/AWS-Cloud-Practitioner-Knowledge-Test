@@ -230,9 +230,7 @@ that will be used in the website*/
 .InformationOfUser {
   align-items: center;
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 40%;
 }
 .InformationOfUser div {
   display: flex;
@@ -250,14 +248,73 @@ that will be used in the website*/
   width: 50%;
 }
 
-.DescriptionOfTheReasonTofillTheInformation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.messageOfResults {
+  height: 10%;
+  width: 100%;
+  text-align: center;
   color: var(--Yellow);
   font-size: 20px;
+  padding: 10px;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 60%;
+  color: white;
   text-align: center;
-  width: 50%;
+  border: 5px solid var(--Yellow);
+}
+.choices .FirstChoice {
+  width: 45%;
+}
+.choices .FirstChoice a {
+  cursor: pointer;
+  color: var(--Yellow);
+}
+.choices .TheBorder {
+  height: 100%;
+  width: 5%;
+}
+.choices .TheBorder .test {
+  width: 20%;
+  border: 4px solid var(--Yellow);
+  background-color: var(--Yellow);
+  height: 100%;
+}
+.choices .SecondChoice {
+  width: 45%;
+}
+.choices .SecondChoice a {
+  cursor: pointer;
+  color: var(--Yellow);
+}
+
+.Message {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 90%;
+  color: white;
+  padding: 10px;
+  background-color: var(--very-dark-orange);
+  border: 4px solid var(--Yellow);
+  border-radius: 10px;
+}
+.Message .BodyOfMessage {
+  height: 80%;
+}
+.Message .BodyOfMessage .correctAndFalseQuestion {
+  height: 10%;
+  color: var(--Yellow);
+}
+.Message .BodyOfMessage .CorrectionOfFalseQuestion {
+  height: 90%;
+}
+.Message .BodyOfMessage .CorrectionOfFalseQuestion b {
+  color: var(--Yellow);
 }
 
 .holderOfStartBtn {
@@ -324,6 +381,33 @@ that will be used in the website*/
   margin-top: 10vh;
   height: 40px;
   width: 400px;
+  cursor: pointer;
+}
+
+.HolderOfGoBackButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+}
+.HolderOfGoBackButton div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.HolderOfGoBackButton div .GoBack {
+  width: 50%;
+  font-size: 20px;
+  color: var(--Yellow);
+  background-color: var(--super-dark-orange);
+  border: 3px solid var(--Yellow);
+  border-radius: 10px;
+  margin-top: 2vh;
+  height: 40px;
+  width: 30%;
   cursor: pointer;
 }
 

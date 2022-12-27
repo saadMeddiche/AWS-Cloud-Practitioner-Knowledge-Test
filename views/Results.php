@@ -1,30 +1,43 @@
-
-
-
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height:100%;">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./includes/css/main.css">
-    <title>Results</title>
+    <title>Document</title>
 </head>
 
 <body class="bodyOfResults">
-
     <!-- ===========The Header=========== -->
     <?php include "./includes/header.php"; ?>
     <!-- ===The end Of the Header=== -->
 
-
-
-    <div class="DescriptionOfTheReasonTofillTheInformation" id="DescriptionOfTheReasonTofillTheInformation">
-        In Order to see your results , Pleaze Enter your Name and Your Email. Then check Your Email For the Results !
+    <div class="messageOfResults" id="messageOfResults" hidden>
+        <p>You should pass the test First , Then You can see your results</p>
     </div>
 
-    <div class="InformationOfUser" id="InformationOfUser">
+    <div class="choices" id="choices">
+        <div class="FirstChoice" id="FirstChoice">
+            <p><a onclick="FirstChoice()">Click Me</a> if you want to see your results here</p>
+            
+        </div>
+
+
+        <div class="TheBorder" id="TheBorder">
+            <button class="test"></button>
+        </div>
+
+        <div class="SecondChoice" id="SecondChoice">
+            <p><a onclick="SecondChoice()">Click Me</a> if You want to send your results to your email</p>
+        </div>
+    </div>
+
+    <div class="InformationOfUser" id="InformationOfUser" hidden>
         <form action="./Send-Results.php" method="post">
 
             <div>
@@ -43,9 +56,7 @@
         </form>
     </div>
 
-
-
-
+    <?php  include './includes/resultText.php' ;?>
 
 </body>
 
@@ -53,43 +64,38 @@
 <!-- Inconify -->
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
-<!-- Cdn Of Jquery -->
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-
-
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
+
+<script src="./includes/js/sender.js"></script>
 
 <!-- The End of links -->
 
 </html>
-
 <?php
-session_start();
 
-// If the user didnt finish all the question ! then he can see his results
 if (!isset($_SESSION["AccessToResults"])) {
     echo "
-        <script>
-        document.getElementById('InformationOfUser').style.visibility = 'hidden';
-        document.getElementById('DescriptionOfTheReasonTofillTheInformation').innerHTML='You should pass the test First , Then You can see your results';
-        </script>";
+    <script>
+        document.getElementById('choices').style.display = 'none';
+        document.getElementById('messageOfResults').style.display = 'block';
+    </script>";
 }
 
-
-
-
-//the changes that will after the send of the mailtext
-if (isset($_SESSION["GoBack"])) {
+if(isset($_SESSION["GoBack"])){
 
     echo "
     <script>
-    document.getElementById('InformationOfUser').style.visibility = 'hidden';
-    document.getElementById('DescriptionOfTheReasonTofillTheInformation').innerHTML='The Results Has been Send To your Email , Pleaze check your Inbox :D';
-    </script>";
+    document.getElementById('messageOfResults').innerHTML = 'The resutls has been sent successfuly to your email :D !';
+    document.getElementById('messageOfResults').style.display = 'block';
 
+    </script>
+    ";
 
     unset($_SESSION["GoBack"]);
 }
+
+
+
 
 ?>

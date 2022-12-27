@@ -2,7 +2,7 @@
     
     align-items: center;
     width: 100%;
-    height: fit-content;
+    height: 40%;
 
    
 
@@ -24,14 +24,92 @@
     }
 }
 
-.DescriptionOfTheReasonTofillTheInformation{
+.messageOfResults{
+    height: 10%;
+    width: 100%;
+
+    text-align: center;
+    color: var(--Yellow);
+
+    font-size: 20px;
+
+    padding: 10px;
+
+}
+
+.choices{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    color: var(--Yellow);
-    font-size: 20px;
+    width: 80%;
+    height: 60%;
+
+    color: white;
     text-align: center;
 
-    width: 50%;
+    border: 5px solid var(--Yellow);
+
+    .FirstChoice{
+        width: 45%;
+        a{
+            cursor: pointer;
+            color: var(--Yellow);
+        }
+
+    }
+
+    
+
+    .TheBorder{
+        height: 100%;
+        width: 5%;
+
+        .test{
+            width: 20%;
+            border: 4px solid var(--Yellow);
+
+            background-color:var(--Yellow);     
+            height: 100%;
+        }
+    }
+
+    .SecondChoice{
+        width: 45%;
+        a {
+            cursor: pointer;
+            color: var(--Yellow);
+
+        }
+    }
+}
+
+.Message{
+    height: fit-content;
+    width: 90%;
+
+    color: white;
+
+    padding: 10px;
+
+    background-color: var(--very-dark-orange);
+
+    border: 4px solid var(--Yellow);
+    border-radius: 10px;
+    .BodyOfMessage{
+        height: 80%;
+
+        .correctAndFalseQuestion{
+            height: 10%;
+            color: var(--Yellow);
+        }
+
+        .CorrectionOfFalseQuestion{
+                height: 90%;
+                b{
+                    color: var(--Yellow);
+                }
+        }
+    }
+
 }
