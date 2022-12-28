@@ -137,3 +137,29 @@
   }
   
 }
+
+.HolderOfRestartButton{
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a{
+    width: 50%;
+    .RestartButton{
+      font-size: 20px;
+      color: var(--Yellow);
+  
+      background-color: var(--super-dark-orange);
+  
+      border: 3px solid var(--Yellow);
+      border-radius: 10px;
+  
+      height: 40px;
+      width: 100%;
+  
+    }
+  }
+  
+}

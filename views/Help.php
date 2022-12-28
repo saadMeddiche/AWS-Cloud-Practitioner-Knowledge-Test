@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION["AccessToTest"] = "AccessToTest";
-
+$_SESSION["accessToTest"] = "yay";
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
@@ -42,6 +41,9 @@ $_SESSION["AccessToTest"] = "AccessToTest";
             <p><b>[</b> You will see your results only if you finished all the questions.<b>]</b></p>
             <br>
             <p><b>[</b> You will notice some circles in the top when you are passing the test. <br>Those Circles indicate how much question left.<b>]</b></p>
+            <br>
+            <p><b>[ Warning :</b>The Restart Button will delete your results . <br> If you want to keep it ! Then send it to your email<b>]</b></p>
+
 
         </div>
 
@@ -59,7 +61,7 @@ $_SESSION["AccessToTest"] = "AccessToTest";
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
 <!-- Incule the timer script -->
-<script src="./includes/js/Home.js"></script>
+<script src="./includes/js/StartTheTest.js.js"></script>
 
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>

@@ -11,9 +11,9 @@
 
 
     <ul class="TheLinks">
-        <li class="TheLink" id="Home"><a href="./Home.php">Home</a></li>
-        <li class="TheLink" id="Help"><a href="./Help.php">Help</a></li>
-        <li class="TheLink" id="Test"><a href="./Test.php">Test</a></li>
-        <li class="TheLink" id="Results"><a href="./Results.php">Results</a></li>
+        <li class="TheLink" id="Home"><a>Home</a></li>
+        <li class="TheLink" id="Help"><a>Help</a></li>
+        <li class="TheLink" id="Test"><a>Test</a></li>
+        <li class="TheLink" id="Results"><a>Results</a></li>
     </ul>
 </div>

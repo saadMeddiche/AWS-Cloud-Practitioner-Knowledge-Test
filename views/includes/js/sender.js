@@ -1,6 +1,9 @@
 //What will happen if the user choosed the first choice
 /* Hide the "choice book" , display the results and change the "top message" */
 function FirstChoice(){
+
+    document.getElementById('HolderOfRestartButton').style.display = 'none';
+
     document.getElementById("choices").style.display="none";
 
     document.getElementById("Message").style.display="block";
@@ -12,6 +15,8 @@ function FirstChoice(){
 //What will happen if the user choosed the second choice
 /* Hide the "choice Book" , display the "insert form" and change the "top message" */
 function SecondChoice(){
+    
+    document.getElementById('HolderOfRestartButton').style.display = 'none';
 
     document.getElementById("choices").style.display="none";
 
@@ -27,3 +32,4 @@ function SecondChoice(){
 function GoBack(){
     location. reload();
 }
+

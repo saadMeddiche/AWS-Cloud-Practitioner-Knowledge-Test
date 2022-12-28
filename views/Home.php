@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
@@ -22,7 +23,7 @@
     </div>
 
     <div class="holderOfStartBtn" id="holderOfStartBtn">
-        <button onclick="ReadyGo()" class="StartBtn">Start</button>
+        <a href="./Help.php"><button  class="StartBtn">Start</button></a>
     </div>
 
 
@@ -32,9 +33,6 @@
 
 <!-- Inconify -->
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-
-<!-- Incule the timer script -->
-<script src="./includes/js/Home.js"></script>
 
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>

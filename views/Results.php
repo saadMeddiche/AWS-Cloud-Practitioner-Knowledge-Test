@@ -25,7 +25,7 @@ session_start();
         <div class="FirstChoice" id="FirstChoice">
             <p><a onclick="FirstChoice()">Click Me</a> if you want to see your results here</p>
 
-            
+
         </div>
 
 
@@ -36,6 +36,12 @@ session_start();
         <div class="SecondChoice" id="SecondChoice">
             <p><a onclick="SecondChoice()">Click Me</a> if You want to send your results to your email</p>
         </div>
+    </div>
+
+    <div class="HolderOfRestartButton" id="HolderOfRestartButton">
+        <a href="./includes/restart.php"><button class="RestartButton">Restart</button></a>
+    </div>
+
     </div>
 
     <div class="InformationOfUser" id="InformationOfUser" hidden>
@@ -90,6 +96,7 @@ if (!isset($_SESSION["AccessToResults"])) {
     echo "
     <script>
         document.getElementById('choices').style.display = 'none';
+        document.getElementById('HolderOfRestartButton').style.display = 'none';
         document.getElementById('messageOfResults').style.display = 'block';
     </script>";
 }

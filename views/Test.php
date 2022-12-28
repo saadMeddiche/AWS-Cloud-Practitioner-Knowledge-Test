@@ -82,7 +82,7 @@ session_start();
 
 //If the user didn't visit the help page yet
 //Hide every thing and show a message
-if (!isset($_SESSION["AccessToTest"])) {
+if (!isset($_SESSION["accessToTest"])) {
     echo "
     <script>
         document.getElementById('TheTest').style.display = 'none';
@@ -99,6 +99,6 @@ if (!isset($_SESSION["AccessToTest"])) {
 ";
 }
 
-// unset($_SESSION["AccessToHelp"]);
+// unset($_SESSION["accessToTest"]);
 
 ?>

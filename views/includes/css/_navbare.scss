@@ -41,16 +41,6 @@
                 color: var(--super-dark-orange);
             }
 
-            
-
-            &:hover{
-                background-color: var(--super-dark-orange);
-                border-radius: 10px;
-                    a{  
-                        padding: 10px;
-                        color: var(--Yellow);
-                    }
-            }
         }
 
         //this class will be add to an elment using js , so we can indicate wich page we are  in it
