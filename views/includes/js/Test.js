@@ -84,6 +84,25 @@ var Parts = [
 
     }
 
+    ,
+
+    part5 = {
+        question: `5) Which of the following is an AWS responsibility under the AWS shared responsibility model?`,
+
+        option1: `Configuring third-party applications.`,
+
+        option2: `Maintaining physical hardware.`,
+
+        option3: `AWS Direct Connect.`,
+
+        option4: `Managing guest operating systems.`,
+
+        correct: `Maintaining physical hardware.`,
+
+        indexOfDescription: 5
+
+    }
+
 
 
 ]

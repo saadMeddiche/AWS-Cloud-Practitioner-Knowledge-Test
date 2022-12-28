@@ -2,6 +2,8 @@
 /* Send The results of the test to the email */
 session_start();
 
+$_SESSION["sendSuccessfully"]="success";
+
 $Description = array(
     "1" => array(
 
@@ -38,6 +40,13 @@ $Description = array(
 
         "description" => "<b>The correct answer is</b> D) Amazon Virtual Private Cloud (Amazon VPC) <br><b>Because :</b>  Amazon VPC lets users provision a logically isolated section of the AWS Cloud where users can launch
         AWS resources in a virtual network that they define.
+        "
+    ),
+    "5" => array(
+
+        "question" => " Which of the following is an AWS responsibility under the AWS shared responsibility model?",
+
+        "description" => "<b>The correct answer is</b> B) Maintaining physical hardware <br><b>Because :</b> Maintaining physical hardware is an AWS responsibility under the AWS shared responsibility model.
         "
     )
 );
@@ -94,12 +103,12 @@ if (isset($_POST["SendResultsButton"])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username  = "dummyaemaila95@gmail.com";
-    $mail->Password = "juryxlperbfyjmvu";
+    $mail->Username  = "neboxepeta@gmail.com";
+    $mail->Password = "wdnzdlgvaxgooyga";
     $mail->SMTPSecure = "ssl";
     $mail->Port = 465;
 
-    $mail->setFrom("DummyEmail12121213@gmail.com");
+    $mail->setFrom("neboxepeta@gmail.com");
     $mail->addAddress($_POST["emailOfUser"]);
 
     $mail->isHTML(true);

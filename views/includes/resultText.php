@@ -38,6 +38,13 @@ $Description = array(
         "description" => "<b>The correct answer is</b> D) Amazon Virtual Private Cloud (Amazon VPC) <br><b>Because :</b>  Amazon VPC lets users provision a logically isolated section of the AWS Cloud where users can launch
         AWS resources in a virtual network that they define.
         "
+    ),
+    "5" => array(
+
+        "question" => " Which of the following is an AWS responsibility under the AWS shared responsibility model?",
+
+        "description" => "<b>The correct answer is</b> B) Maintaining physical hardware <br><b>Because :</b> Maintaining physical hardware is an AWS responsibility under the AWS shared responsibility model.
+        "
     )
 );
 
@@ -70,6 +77,6 @@ $Description = array(
                 Back
             </button>
         </div>
-
     </div>
+    
 </div>

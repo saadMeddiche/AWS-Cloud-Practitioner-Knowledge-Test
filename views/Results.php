@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -24,6 +24,7 @@ session_start();
     <div class="choices" id="choices">
         <div class="FirstChoice" id="FirstChoice">
             <p><a onclick="FirstChoice()">Click Me</a> if you want to see your results here</p>
+
             
         </div>
 
@@ -41,22 +42,29 @@ session_start();
         <form action="./Send-Results.php" method="post">
 
             <div>
-                <input type="text" name="nameOfUser" placeholder="Name...">
+                <input type="text" name="nameOfUser" placeholder="Name..." required>
 
             </div>
 
             <div>
-                <input type="email" name="emailOfUser" placeholder="Email...">
+                <input type="email" name="emailOfUser" placeholder="Email..." required>
             </div>
 
             <div>
                 <button type="submit" class="SendResultsButton" name="SendResultsButton">Send</button>
             </div>
+            <div class="HolderOfGoBackButton">
+                <div>
+                    <button class="GoBack" onclick="GoBack()" style="width:20%;">
+                        Back
+                    </button>
+                </div>
+            </div>
 
         </form>
     </div>
 
-    <?php  include './includes/resultText.php' ;?>
+    <?php include './includes/resultText.php'; ?>
 
 </body>
 
@@ -84,6 +92,16 @@ if (!isset($_SESSION["AccessToResults"])) {
         document.getElementById('choices').style.display = 'none';
         document.getElementById('messageOfResults').style.display = 'block';
     </script>";
+}
+
+if (isset($_SESSION["sendSuccessfully"])) {
+    echo "
+    <script>
+        document.getElementById('messageOfResults').innerHTML = 'The results has been send successfuly to your email :D';
+        document.getElementById('messageOfResults').style.display = 'block';
+    </script>";
+
+    unset($_SESSION["sendSuccessfully"]);
 }
 
 // unset($_SESSION["AccessToResults"]);

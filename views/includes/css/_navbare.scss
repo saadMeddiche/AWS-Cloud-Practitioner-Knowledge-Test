@@ -1,7 +1,7 @@
 .navbare{
 
     width: 100%;
-    height: 20%;
+    height: fit-content;
 
     align-items: center;
 
@@ -27,6 +27,8 @@
         
         display: flex;
         justify-content: space-evenly;
+
+        padding: 15px;
 
         width: 100%;
 

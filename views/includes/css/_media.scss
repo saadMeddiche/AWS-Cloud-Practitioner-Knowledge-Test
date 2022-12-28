@@ -88,7 +88,7 @@
     .navbare{
         position: relative;
         z-index: 9;
-        height: 12%;
+        height: 7%;
 
         text-align: center;
 
@@ -156,6 +156,20 @@
                 font-size: 50px;
             }
         }
+    }
+
+    .InformationOfUser{
+
+        div{
+
+            input{
+                width: 80%;
+            }
+        }
+    }
+
+    .SendResultsButton{
+        width: 80%;
     }
     
 
