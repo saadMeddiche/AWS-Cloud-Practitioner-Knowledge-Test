@@ -1,3 +1,6 @@
+<?php 
+include './Banned/bannedChecker.php';
+?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
@@ -78,7 +81,6 @@
 </html>
 
 <?php
-session_start();
 
 //If the user didn't visit the help page yet
 //Hide every thing and show a message
