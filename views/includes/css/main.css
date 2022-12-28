@@ -461,7 +461,7 @@ that will be used in the website*/
   .navbare {
     position: relative;
     z-index: 9;
-    height: 7%;
+    height: 8%;
     text-align: center;
   }
   .navbare .logo {

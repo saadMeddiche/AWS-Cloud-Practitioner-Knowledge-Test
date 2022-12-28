@@ -24,7 +24,7 @@
             document.getElementById("holderOfHomeTimer").style.display="block";
 
             if(seconds == 0){
-                document.getElementById("timerHome").innerHTML = "Readyy";
+                document.getElementById("timerHome").innerHTML = "Ready";
 
                 setInterval(function() {
 
