@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 /* this file is included in Results.php */
 /* This array contain the description of each question*/
 $Description = array(

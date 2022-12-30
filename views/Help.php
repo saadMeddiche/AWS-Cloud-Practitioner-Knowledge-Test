@@ -1,4 +1,8 @@
+<?php 
 
+session_start();
+$_SESSION["accessToTest"]="yay";
+?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
