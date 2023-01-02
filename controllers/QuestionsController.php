@@ -1,6 +1,6 @@
 <?php 
 
-class questionsController
+class QuestionsController
 {
 
     public function getAllQuestions(){

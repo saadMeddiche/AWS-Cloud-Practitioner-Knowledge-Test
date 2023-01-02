@@ -1,5 +1,5 @@
-<?php 
-include './Banned/bannedChecker.php';
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
@@ -33,16 +33,17 @@ include './Banned/bannedChecker.php';
         </div>
 
         <div class="TheOpstions">
-        
-            <p class="TheOpstion" onclick="answer('Option1'),changeStyleOfOption('1')" id="Test1">A) <span id="Option1"></span></p>
-            <p class="TheOpstion" onclick="answer('Option2'),changeStyleOfOption('2')" id="Test2">B) <span id="Option2"></span></p>
-            <p class="TheOpstion" onclick="answer('Option3'),changeStyleOfOption('3')" id="Test3">C) <span id="Option3"></span></p>
-            <p class="TheOpstion" onclick="answer('Option4'),changeStyleOfOption('4')" id="Test4">D) <span id="Option4"></span></p>
+
+            <p class="TheOpstion" onclick="answer('1'),changeStyleOfOption('1')" id="Test1">A) <span id="Option1"></span><span id="indexOfOption1" hidden></span></p>
+            <p class="TheOpstion" onclick="answer('2'),changeStyleOfOption('2')" id="Test2">B) <span id="Option2"></span><span id="indexOfOption2" hidden></span></p>
+            <p class="TheOpstion" onclick="answer('3'),changeStyleOfOption('3')" id="Test3">C) <span id="Option3"></span><span id="indexOfOption3" hidden></span></p>
+            <p class="TheOpstion" onclick="answer('4'),changeStyleOfOption('4')" id="Test4">D) <span id="Option4"></span><span id="indexOfOption4" hidden></span></p>
         </div>
 
         <!-- Reason to make this div ?  to send a value from js to php so i can use for the email-->
         <div hidden>
             <form action="./Stock-Results.php" method="post">
+                <input type="text" id="indexOfSelectedAnswers" name="indexOfSelectedAnswers">
                 <input type="text" id="indexOfselectedDescriptions" name="indexOfselectedDescriptions">
                 <input type="text" id="correctAnswers" name="correctAnswers" value="">
                 <input type="text" id="falseAnswers" name="falseAnswers" value="">
@@ -71,7 +72,7 @@ include './Banned/bannedChecker.php';
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
 <!-- Incule the timer script -->
-<script src="./includes/js/Test.js"></script>
+<?php include "./includes/js/Test.php"; ?>
 <!-- The End of links -->
 
 <!-- include the script that animate the stepper -->

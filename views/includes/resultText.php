@@ -61,12 +61,10 @@ $Description = array(
 
         <div class="CorrectionOfFalseQuestion">
             <?php
-            for ($i = 0; $i < $_SESSION["falseAnswers"] + ($_SESSION["falseAnswers"] - 1); $i++) {
-                if ($_SESSION["indexOfselectedDescriptions"][$i] != ",") {
-                    echo "<br> <br> <br> <b class='correctAndFalseQuestion'>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"] . "</b>";
+            for ($i = 0; $i < count($_SESSION["indexOfselectedDescriptions"]); $i++) {
+                echo "<br> <br> <br> <b class='correctAndFalseQuestion'>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["question"] . "</b>";
 
-                    echo "<br> <br>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"];
-                }
+                echo "<br> <br>" . $Description[$_SESSION["indexOfselectedDescriptions"][$i]]["description"];
             };
             ?>
 
@@ -80,5 +78,5 @@ $Description = array(
             </button>
         </div>
     </div>
-    
+
 </div>

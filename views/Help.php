@@ -67,7 +67,6 @@ $_SESSION["accessToTest"]="yay";
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
 
-<script src="./includes/js/dogWatcher.js"> </script>
 
 <!-- The End of links -->
 
