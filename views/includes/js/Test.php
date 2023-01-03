@@ -5,7 +5,14 @@ $data = new QuestionsController();
 $question = $data->getAllQuestions();
 
 $text;
+
+//This variable used for random question
 $countOfQuestion = 0;
+
+/* each option has a different index from other .
+with this index we can know the selecetd answer and
+we can detect if its false or not
+*/
 $indexOfOption = 0;
 
 // index of question = index of description
@@ -15,10 +22,14 @@ $indexOfOption = 0;
 
     /* I separeted The Parts array into other parts,
     each part contain the question , the options , 
-    the correct answer and the index of the description
-    that will help us a lot to show the descriptions [reesults] */
+    the index of the answer and the index of the description
+    that will help us a lot to show the descriptions [results] */
     var Parts = [
         <?php
+        /*
+        First loop is for the questions,
+        The second loop if for the answers and their indexes 
+        */
         for ($i = 0; $i < 5; $i++) {
             $text = '
                 part' . $question[$countOfQuestion][0] . ' = {
@@ -51,7 +62,10 @@ $indexOfOption = 0;
         ?>
     ]
 
+    /* this varibale help us to do not
+     stock the same index of answers */
     var checkIndex = "replace";
+
     /* This is the array where we stock the 
     index of the description of the selected option */
     var selectedDescriptions = [];
@@ -66,15 +80,7 @@ $indexOfOption = 0;
     var check = "NoneYet";
 
     //The counter of the end of one question
-    var timer = "66666666666";
-
-    //with this variables we know if the user has choosen a correct or false answer
-    var correctAnswer = 0;
-    var falseAnswer = 0;
-
-    //In this variables we stock total of correct and false answers
-    var correctAnswers = 0;
-    var falseAnswers = 0;
+    var timer = "2";
 
     //With this variable we can stop the timer bc: i am using the "setinterval function"
     var out;
@@ -148,32 +154,6 @@ $indexOfOption = 0;
         //Each time we display a new question , we also need to set "check" to it's default
         check = "NoneYet";
 
-
-        /* ====== Description ====== */
-
-        //If the choosen answer is false , then stock index of the description into the array "selectedDescriptions"
-        if (falseAnswer == 1) {
-
-            selectedDescriptions.push(Parts[indexOfPart].indexOfDescription);
-
-            /* Put the value of the array "selectedDescriptions" into a hidden input ,
-            so we can stock it in a php session */
-            document.getElementById("indexOfselectedDescriptions").value = selectedDescriptions;
-
-        }
-        /* ====== End ====== */
-
-        /* ====== Stock the state of Answers ====== */
-
-        //stock the of the correct and false answers
-        correctAnswers += correctAnswer;
-        falseAnswers += falseAnswer;
-
-        //Stock the answers into hidden inputs so we can later use post method 
-        document.getElementById("correctAnswers").value = correctAnswers;
-        document.getElementById("falseAnswers").value = falseAnswers;
-        /* ====== End ====== */
-
         /* ====== Delete ====== */
         /* Each time we need to delete the "used part",
         so it can't be repeated another time */
@@ -190,6 +170,13 @@ $indexOfOption = 0;
         if (Parts.length == 0) {
 
             document.getElementById("indexOfSelectedAnswers").value = selectedAnswers;
+
+            /* Put the value of the array "selectedDescriptions" into a hidden input ,
+            so we can stock it in a php session */
+            document.getElementById("indexOfselectedDescriptions").value = selectedDescriptions;
+
+            document.getElementById("numberOfquestion").value = FirstLenght;
+
             //click a hidden button . By this button , we stock the answers
             document.getElementById("insertAnswers").click();
         }
@@ -224,9 +211,6 @@ $indexOfOption = 0;
         }
 
         ?>
-
-                
-
         /* ====== End ====== */
 
 
@@ -235,6 +219,8 @@ $indexOfOption = 0;
     /*========== False||Correct answer ==========*/
     //By the "id" we can know the choosen option
     function answer(id) {
+
+
 
         // "0" mean nothing has been choosed
         //If "id" == 0 then no option has been choosed , so it will consider as a falt answer
@@ -245,22 +231,27 @@ $indexOfOption = 0;
             //We change the value of "check" so we know that an option has been choosed
             check = "Yes";
 
-            //The choosen answer
-            let chosenAnwer = document.getElementById("Option" + id).innerHTML;
-
             let indexOfChosenAnswer = document.getElementById("indexOfOption" + id).innerHTML;
 
+            //first check the index is already stocked in the array or not
             if (!selectedAnswers.includes(indexOfChosenAnswer)) {
 
+                /*
+                By using the variable "checkIndex"
+                we detect if he choosed the answer from the same question
+                so we can overwrite the previous index
+                */
                 if (checkIndex === "replace") {
 
+                    //delete the last index then ...
                     selectedAnswers.pop();
+
+                    // ... replace it with the new index
                     selectedAnswers.push(indexOfChosenAnswer);
-                    console.log(selectedAnswers);
 
                 } else {
+
                     selectedAnswers.push(indexOfChosenAnswer);
-                    console.log(selectedAnswers);
 
                     checkIndex = "replace";
                 }
@@ -268,22 +259,12 @@ $indexOfOption = 0;
             }
 
 
-            //The Correct answer
-            let correctOne = Parts[indexOfPart].correct;
 
-            /* Check if the choosed answer is correct or not ,
-            by comaparing the choosen and the correct answer*/
-            if (chosenAnwer == correctOne) {
-                correctAnswer = 1;
-                falseAnswer = 0;
-
-            } else {
-                falseAnswer = 1;
-                correctAnswer = 0;
-            }
         } else {
-            falseAnswer = 1;
-            correctAnswer = 0;
+            selectedDescriptions.push(Parts[indexOfPart].indexOfDescription);
+            console.log(selectedDescriptions);
+
+
         }
 
 

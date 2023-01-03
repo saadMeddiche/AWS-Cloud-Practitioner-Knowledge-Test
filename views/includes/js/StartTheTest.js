@@ -16,11 +16,14 @@ function ReadyGo(){
         document.getElementById("holderOfHomeTimer").style.display="block";
 
         if(seconds == 0){
+            setInterval(function() {
             document.getElementById("timerHome").innerHTML = "Ready";
+            },1000)
 
             setInterval(function() {
-
+                setInterval(function() {
                 document.getElementById("timerHome").innerHTML = "Goo";
+                },1000)
 
                 setInterval(function() {
                     window.location.href ="./Test.php";              

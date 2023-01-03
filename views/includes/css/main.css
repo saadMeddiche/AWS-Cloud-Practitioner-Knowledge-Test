@@ -204,6 +204,7 @@ that will be used in the website*/
   height: -moz-fit-content;
   height: fit-content;
   width: 65%;
+  height: fit-content;
   padding: 10px;
   background-color: var(--very-dark-orange);
   border: 3px solid var(--Yellow);
@@ -325,7 +326,10 @@ that will be used in the website*/
   width: 100%;
   height: 20%;
 }
-.holderOfStartBtn .StartBtn {
+.holderOfStartBtn a {
+  width: 50%;
+}
+.holderOfStartBtn a .StartBtn {
   font-size: 20px;
   color: var(--Yellow);
   background-color: var(--super-dark-orange);
@@ -333,7 +337,7 @@ that will be used in the website*/
   border-radius: 10px;
   margin-top: 50vh;
   height: 40px;
-  width: 400px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -467,10 +471,19 @@ that will be used in the website*/
   .TheTest .TheOpstions .TheOpstion {
     width: 45%;
   }
+  .HolderOfHelpDescription {
+    margin-top: 10%;
+  }
 }
 @media (max-width: 400px) {
   .TheTest .TheOpstions .TheOpstion {
     width: 100%;
+  }
+  .bodyOfHome {
+    background-size: 600px;
+  }
+  .holderOfStartBtn a {
+    width: 60%;
   }
   .navbare {
     position: relative;
@@ -531,4 +544,15 @@ that will be used in the website*/
   padding: 0;
   box-sizing: border-box;
   font-family: cursive;
+}
+
+/* https://stackoverflow.com/questions/9664325/style-the-scrollbar-with-css-in-google-chrome-webkit */
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--Yellow);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: var(--very-dark-orange);
 }/*# sourceMappingURL=main.css.map */

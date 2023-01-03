@@ -45,8 +45,7 @@ session_start();
             <form action="./Stock-Results.php" method="post">
                 <input type="text" id="indexOfSelectedAnswers" name="indexOfSelectedAnswers">
                 <input type="text" id="indexOfselectedDescriptions" name="indexOfselectedDescriptions">
-                <input type="text" id="correctAnswers" name="correctAnswers" value="">
-                <input type="text" id="falseAnswers" name="falseAnswers" value="">
+                <input type="text" id="numberOfquestion" name="numberOfquestion">
                 <button type="submit" id="insertAnswers">start</button>
             </form>
         </div>
