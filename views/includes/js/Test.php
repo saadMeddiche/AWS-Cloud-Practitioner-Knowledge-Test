@@ -1,19 +1,27 @@
 <?php
 include "../models/Questions.php";
 include "../controllers/QuestionsController.php";
+
 $data = new QuestionsController();
 $question = $data->getAllQuestions();
 
+//This varibale we will use it to stock the parts
 $text;
 
-
+//To know wich option we will print
 $countOfOption = 0;
 
-$Jump = 0;
+//The current row
+$row = 0;
+
 
 $lastone = 0;
 
 $loop = 0;
+
+//This variable stop a the big loop from working when it is $fin !=0
+$fin = 0;
+
 /* each option has a different index from other .
 with this index we can know the selecetd answer and
 we can detect if its false or not
@@ -31,29 +39,39 @@ $indexOfOption = 0;
     that will help us a lot to show the descriptions [results] */
     var Parts = [
         <?php
-        /*
-        First loop is for the questions,
-        The second loop if for the answers and their indexes 
-        */
-       
-        for ($i = 0; $i < count($question) / 4; $i++) {
-            if ($Jump + 1 == count($question)) break;
 
+        //This "While loops" == "number of questions"
+        while ($fin == 0) {
+
+            /* Because in our requeste , the same question came 4 time,
+            So this loop is the solution to do not repeat the same question */
             for ($f = 0; $f < count($question); $f++) {
-                if ($Jump + 1 == count($question)) $lastone = 10;
 
-                if ($question[$Jump][0] != $question[$Jump + 1 - $lastone][0]) {
+                //This condition detect if we are in the last question
+                /* If the future row is equal to the length of the array ,
+                that mean we are in the last question.
+                So we need to stop the while loop and print the current question */
+                if ($row + 1 == count($question)) {
+                    $lastone = count($question) / 2;
+                    $fin = 1;
+                }
+
+                /* Each time we need to check if the "current row" is different to "future row" 
+                If it is ! that mean we are in the border, so we need to print the question in the "current row.
+                then we need to break from the loop"
+                */
+                if ($question[$row][0] != $question[$row + 1 - $lastone][0]) {
                     $text = '
-                    part' . $question[$Jump][0] . ' = {
-                        question:" ' . $question[$Jump][1] . '",';
-                    $Jump++;
+                    part' . $question[$row][0] . ' = {
+                        question:" ' . $question[$row][1] . '",';
+                    $row++;
 
                     break;
                 }
-                $Jump++;
+                $row++;
             }
 
-
+            //This loop print the option and its index
             for ($k = 1; $k <= 4; $k++) {
 
                 $text .= '
@@ -66,8 +84,11 @@ $indexOfOption = 0;
                 $countOfOption++;
             }
 
+
+            //$row-1 because it is the current row
             $text .= '
-                    
+
+                indexOfDescription:`' . $question[$row-1][0] . '`
                     
                 }
                 ,
@@ -186,12 +207,15 @@ $indexOfOption = 0;
         //So when the user unswer all the question , what will happen ?
         if (Parts.length == 0) {
 
+            /* Put the values of the array "selectedAnswers" into a hidden input ,
+            so we can stock it in a php session */
             document.getElementById("indexOfSelectedAnswers").value = selectedAnswers;
 
-            /* Put the value of the array "selectedDescriptions" into a hidden input ,
+            /* Put the values of the array "selectedDescriptions" into a hidden input ,
             so we can stock it in a php session */
             document.getElementById("indexOfselectedDescriptions").value = selectedDescriptions;
 
+            //We also send number of question so we can use it in results
             document.getElementById("numberOfquestion").value = FirstLenght;
 
             //click a hidden button . By this button , we stock the answers
@@ -278,6 +302,7 @@ $indexOfOption = 0;
 
 
         } else {
+            //If no answer has been choosed , then we will stock the index of description
             selectedDescriptions.push(Parts[indexOfPart].indexOfDescription);
             console.log(selectedDescriptions);
 
