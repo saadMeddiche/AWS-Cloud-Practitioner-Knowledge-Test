@@ -6,9 +6,14 @@ $question = $data->getAllQuestions();
 
 $text;
 
-//This variable used for random question
-$countOfQuestion = 0;
 
+$countOfOption = 0;
+
+$Jump = 0;
+
+$lastone = 0;
+
+$loop = 0;
 /* each option has a different index from other .
 with this index we can know the selecetd answer and
 we can detect if its false or not
@@ -30,25 +35,38 @@ $indexOfOption = 0;
         First loop is for the questions,
         The second loop if for the answers and their indexes 
         */
-        for ($i = 0; $i < 5; $i++) {
-            $text = '
-                part' . $question[$countOfQuestion][0] . ' = {
-                    question:" ' . $question[$countOfQuestion][1] . '",';
+       
+        for ($i = 0; $i < count($question) / 4; $i++) {
+            if ($Jump + 1 == count($question)) break;
 
-            for ($k = 0; $k < 4; $k++) {
-                $copyOFK = $k + 1;
+            for ($f = 0; $f < count($question); $f++) {
+                if ($Jump + 1 == count($question)) $lastone = 10;
+
+                if ($question[$Jump][0] != $question[$Jump + 1 - $lastone][0]) {
+                    $text = '
+                    part' . $question[$Jump][0] . ' = {
+                        question:" ' . $question[$Jump][1] . '",';
+                    $Jump++;
+
+                    break;
+                }
+                $Jump++;
+            }
+
+
+            for ($k = 1; $k <= 4; $k++) {
 
                 $text .= '
-                        option' . $copyOFK . ': `' . $question[$k][4] . '`,
+                        option' . $k . ': `' . $question[$countOfOption][4] . '`,
 
-                        indexOfOption' . $copyOFK . ': `' . $question[$indexOfOption][3] . '`,
+                        indexOfOption' . $k . ': `' . $question[$indexOfOption][3] . '`,
 
                         ';
                 $indexOfOption++;
+                $countOfOption++;
             }
 
             $text .= '
-                    indexOfDescription: ' . $question[$countOfQuestion][0] . ',
                     
                     
                 }
@@ -57,7 +75,6 @@ $indexOfOption = 0;
 
 
             echo $text;
-            $countOfQuestion += 4;
         }
         ?>
     ]
