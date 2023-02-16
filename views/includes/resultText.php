@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include "../database/Db.php";
 include "../models/Description.php";

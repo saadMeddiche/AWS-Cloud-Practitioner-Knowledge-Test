@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "./Banned/bannedChecker.php"
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
@@ -74,6 +74,8 @@ session_start();
 <?php include "./includes/js/Test.php"; ?>
 <!-- The End of links -->
 
+<!-- Include the dogwatcher -->
+
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
 
@@ -101,6 +103,5 @@ if (!isset($_SESSION["accessToTest"])) {
 ";
 }
 
-// unset($_SESSION["accessToTest"]);
 
 ?>

@@ -60,12 +60,12 @@ if (isset($_POST["SendResultsButton"])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username  = "neboxepeta@gmail.com";
-    $mail->Password = "wdnzdlgvaxgooyga";
+    $mail->Username  = "DummyEmail12121213@gmail.com";
+    $mail->Password = "ejgaodwcmqyjedpz";
     $mail->SMTPSecure = "ssl";
     $mail->Port = 465;
 
-    $mail->setFrom("neboxepeta@gmail.com");
+    $mail->setFrom("DummyEmail12121213@gmail.com");
     $mail->addAddress($_POST["emailOfUser"]);
 
     $mail->isHTML(true);
@@ -74,7 +74,8 @@ if (isset($_POST["SendResultsButton"])) {
 
     $mail->Body = $mailtext;
 
-    $mail->send();
+    $mail->send
+    
 }
 
 header("location:./Results.php");

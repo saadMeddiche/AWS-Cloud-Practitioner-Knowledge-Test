@@ -1,4 +1,12 @@
+<?php
 
+
+include "./Banned/bannedChecker.php";
+
+// unset($_SESSION["AccessToResults"]);
+// unset($_SESSION["accessToTest"]);
+
+?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 
@@ -23,7 +31,7 @@
     </div>
 
     <div class="holderOfStartBtn" id="holderOfStartBtn">
-        <a href="./Help.php"><button  class="StartBtn">Start</button></a>
+        <a href="./Help.php"><button class="StartBtn">Start</button></a>
     </div>
 
 

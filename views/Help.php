@@ -1,7 +1,9 @@
 <?php 
+include "./Banned/bannedChecker.php";
 
-session_start();
 $_SESSION["accessToTest"]="yay";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
@@ -43,7 +45,9 @@ $_SESSION["accessToTest"]="yay";
             <br>
             <p><b>[</b> You will notice some circles in the top when you are passing the test. <br>Those Circles indicate how much question left.<b>]</b></p>
             <br>
-            <p><b>[ Warning :</b>The Restart Button will delete your results . <br> If you want to keep it ! Then send it to your email<b>]</b></p>
+            <p><b>[ Hint :</b>The Restart Button will delete your results . <br> If you want to keep it ! Then send it to your email<b>]</b></p>
+            <br>
+            <p><b>[ Warning :</b>Please do not open inspect or go to another page while passing the test. <br> It Will consider as cheating<b>]</b></p>
 
 
         </div>

@@ -118,7 +118,7 @@ $indexOfOption = 0;
     var check = "NoneYet";
 
     //The counter of the end of one question
-    var timer = "2";
+    var timer = "30";
 
     //With this variable we can stop the timer bc: i am using the "setinterval function"
     var out;

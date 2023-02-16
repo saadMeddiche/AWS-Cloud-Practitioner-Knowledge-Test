@@ -9,4 +9,3 @@ if(isset($_SESSION["Banned"])){
 
 ?>
 
-<script src="./includes/js/dogWatcher.js"> </script>

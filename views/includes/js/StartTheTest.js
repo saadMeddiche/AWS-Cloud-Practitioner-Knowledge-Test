@@ -16,20 +16,16 @@ function ReadyGo(){
         document.getElementById("holderOfHomeTimer").style.display="block";
 
         if(seconds == 0){
-            setInterval(function() {
             document.getElementById("timerHome").innerHTML = "Ready";
+
+            setInterval(function() {
+                document.getElementById("timerHome").innerHTML = "Goo";
             },1000)
 
             setInterval(function() {
-                setInterval(function() {
-                document.getElementById("timerHome").innerHTML = "Goo";
-                },1000)
-
-                setInterval(function() {
-                    window.location.href ="./Test.php";              
-                },1000)
-
+                window.location.href ="./Test.php";              
             },1000)
+
 
 
         }else{

@@ -1,5 +1,5 @@
-<?php
-
+<?php 
+include "./Banned/bannedChecker.php"
 ?>
 <!DOCTYPE html>
 <html lang="en" style="height:100%;">
@@ -111,5 +111,4 @@ if (isset($_SESSION["sendSuccessfully"])) {
     unset($_SESSION["sendSuccessfully"]);
 }
 
-// unset($_SESSION["AccessToResults"]);
 ?>
