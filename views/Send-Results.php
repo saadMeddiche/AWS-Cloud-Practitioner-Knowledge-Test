@@ -55,27 +55,29 @@ require '../phpmailer/src/SMTP.php';
 if (isset($_POST["SendResultsButton"])) {
 
 
-    $mail = new PHPMailer(true);
+    // I have commented this code , Because the email that i use it keep geting blocked , Because i didn't use a Mail-Service
 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username  = "DummyEmail12121213@gmail.com";
-    $mail->Password = "ejgaodwcmqyjedpz";
-    $mail->SMTPSecure = "ssl";
-    $mail->Port = 465;
+    // $mail = new PHPMailer(true);
 
-    $mail->setFrom("DummyEmail12121213@gmail.com");
-    $mail->addAddress($_POST["emailOfUser"]);
+    // $mail->isSMTP();
+    // $mail->Host = 'smtp.gmail.com';
+    // $mail->SMTPAuth = true;
+    // $mail->Username  = "DummyEmail12121213@gmail.com";
+    // $mail->Password = "ejgaodwcmqyjedpz";
+    // $mail->SMTPSecure = "ssl";
+    // $mail->Port = 465;
 
-    $mail->isHTML(true);
+    // $mail->setFrom("DummyEmail12121213@gmail.com");
+    // $mail->addAddress($_POST["emailOfUser"]);
 
-    $mail->Subject = "test";
+    // $mail->isHTML(true);
 
-    $mail->Body = $mailtext;
+    // $mail->Subject = "test";
 
-    $mail->send
-    
+    // $mail->Body = $mailtext;
+
+    // $mail->send();
+
 }
 
 header("location:./Results.php");

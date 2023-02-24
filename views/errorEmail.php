@@ -1,4 +1,4 @@
-<?php
+<?php 
 include "./Banned/bannedChecker.php"
 ?>
 <!DOCTYPE html>
@@ -104,7 +104,7 @@ if (!isset($_SESSION["AccessToResults"])) {
 if (isset($_SESSION["sendSuccessfully"])) {
     echo "
     <script>
-        document.getElementById('messageOfResults').innerHTML = 'Oops !Because I didn\'t use  a Mail-service, It seems that My email that I use to send results has been blocked';
+        document.getElementById('messageOfResults').innerHTML = 'The results has been send successfuly to your email :D';
         document.getElementById('messageOfResults').style.display = 'block';
     </script>";
 

@@ -75,6 +75,7 @@ include "./Banned/bannedChecker.php"
 <!-- The End of links -->
 
 <!-- Include the dogwatcher -->
+<script src="./includes/js/dogWatcher.js"></script>
 
 <!-- include the script that animate the stepper -->
 <script src="./includes/js/step.js"></script>
